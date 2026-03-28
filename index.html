@@ -1,0 +1,2717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASCENT TOGETHER 2026 — Convention Brand System</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Brand Palette */
+    --flame-gold:    #F5A623;
+    --flame-amber:   #E8751A;
+    --flame-orange:  #D94F12;
+    --flame-red:     #C0320A;
+    --flame-deep:    #A01E04;
+
+    --ascent-charcoal: #1A1A1A;
+    --ascent-smoke:    #2D2D2D;
+    --ascent-slate:    #4A4A4A;
+    --ascent-warm-white: #FAF7F4;
+    --ascent-cream:   #F2ECE4;
+    --ascent-pearl:   #E8E0D4;
+
+    /* Typography */
+    --font-display: 'Bebas Neue', 'Impact', sans-serif;
+    --font-headline: 'Barlow Condensed', sans-serif;
+    --font-body: 'Barlow', sans-serif;
+
+    /* Gradients */
+    --gradient-flame: linear-gradient(135deg, #F5A623 0%, #E8751A 30%, #D94F12 60%, #C0320A 85%, #A01E04 100%);
+    --gradient-flame-v: linear-gradient(180deg, #F5A623 0%, #E8751A 30%, #D94F12 60%, #C0320A 100%);
+    --gradient-dark: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+    --gradient-warm: linear-gradient(135deg, #FAF7F4 0%, #F2ECE4 100%);
+
+    --page-width: 1200px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ascent-charcoal);
+    color: var(--ascent-warm-white);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* ─── COVER ─── */
+  .cover {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: #111;
+    padding: 80px 40px;
+  }
+
+  .cover-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 60% 30%, rgba(216,79,18,0.18) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(245,166,35,0.10) 0%, transparent 50%);
+  }
+
+  .cover-supergraphic {
+    position: absolute;
+    top: -60px;
+    right: -80px;
+    width: 550px;
+    height: 550px;
+    opacity: 0.07;
+  }
+
+  .cover-supergraphic-bl {
+    position: absolute;
+    bottom: -100px;
+    left: -120px;
+    width: 500px;
+    height: 500px;
+    opacity: 0.05;
+    transform: rotate(180deg);
+  }
+
+  .cover-label {
+    font-family: var(--font-headline);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--flame-amber);
+    margin-bottom: 32px;
+    opacity: 0.85;
+  }
+
+  .cover-title {
+    font-family: var(--font-display);
+    font-size: clamp(64px, 8vw, 120px);
+    line-height: 0.9;
+    text-align: center;
+    background: var(--gradient-flame);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .cover-sub {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: clamp(18px, 2.5vw, 28px);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ascent-warm-white);
+    text-align: center;
+    margin-bottom: 48px;
+    opacity: 0.7;
+  }
+
+  .cover-divider {
+    width: 120px;
+    height: 3px;
+    background: var(--gradient-flame);
+    margin: 0 auto 48px;
+    border-radius: 2px;
+  }
+
+  .cover-meta {
+    font-family: var(--font-headline);
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ascent-pearl);
+    text-align: center;
+    opacity: 0.5;
+  }
+
+  .cover-doc-info {
+    position: absolute;
+    bottom: 40px;
+    right: 48px;
+    text-align: right;
+    font-family: var(--font-body);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.2);
+    text-transform: uppercase;
+  }
+
+  /* ─── SECTION SYSTEM ─── */
+  .section-block {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 100px 48px;
+  }
+
+  .section-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--flame-orange), transparent);
+    opacity: 0.2;
+  }
+
+  .section-number {
+    font-family: var(--font-headline);
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--flame-amber);
+    margin-bottom: 16px;
+    opacity: 0.8;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1;
+    letter-spacing: 0.03em;
+    color: var(--ascent-warm-white);
+    margin-bottom: 16px;
+  }
+
+  .section-title span {
+    background: var(--gradient-flame);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-intro {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(250,247,244,0.65);
+    max-width: 640px;
+    margin-bottom: 64px;
+  }
+
+  /* ─── PALETTE ─── */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+
+  .swatch {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .swatch-color {
+    height: 100px;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .swatch-info {
+    background: rgba(255,255,255,0.04);
+    padding: 10px 12px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .swatch-name {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .swatch-hex {
+    font-family: var(--font-body);
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    font-weight: 300;
+  }
+
+  .gradient-swatch {
+    height: 80px;
+    border-radius: 8px;
+    background: var(--gradient-flame);
+    margin-bottom: 48px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+  }
+
+  .gradient-swatch-label {
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: white;
+    letter-spacing: 0.05em;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+  }
+
+  /* ─── TYPE SYSTEM ─── */
+  .type-specimen {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 64px;
+  }
+
+  .type-row {
+    border-left: 3px solid;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .type-row.flame { border-color: var(--flame-orange); }
+  .type-row.amber { border-color: var(--flame-amber); }
+  .type-row.slate { border-color: rgba(255,255,255,0.15); }
+
+  .type-meta {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 8px;
+    font-family: var(--font-body);
+    font-weight: 400;
+  }
+
+  .type-display-ex {
+    font-family: var(--font-display);
+    font-size: 56px;
+    line-height: 1;
+    background: var(--gradient-flame);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.02em;
+  }
+
+  .type-headline-ex {
+    font-family: var(--font-headline);
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ascent-warm-white);
+  }
+
+  .type-subhead-ex {
+    font-family: var(--font-headline);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--flame-amber);
+  }
+
+  .type-body-ex {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(250,247,244,0.7);
+  }
+
+  /* ─── SUPERGRAPHIC DEVICE ─── */
+  .supergraphic-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 64px;
+  }
+
+  .sg-card {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    min-height: 240px;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+  }
+
+  .sg-card-label {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ─── ENVIRONMENTAL / APPLICATIONS ─── */
+  .app-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 64px;
+  }
+
+  .app-card {
+    border-radius: 12px;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .app-card-inner {
+    padding: 32px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .app-card-eyebrow {
+    font-family: var(--font-headline);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--flame-amber);
+    margin-bottom: 8px;
+  }
+
+  .app-card-title {
+    font-family: var(--font-display);
+    font-size: 36px;
+    line-height: 1;
+    color: white;
+    letter-spacing: 0.03em;
+    margin-bottom: 12px;
+  }
+
+  .app-card-desc {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.55);
+    max-width: 340px;
+  }
+
+  /* Stage / Keynote */
+  .keynote-mockup {
+    border-radius: 16px;
+    overflow: hidden;
+    background: #0A0A0A;
+    margin-bottom: 64px;
+    position: relative;
+    padding-bottom: 44.44%; /* 16:9 */
+  }
+
+  .keynote-mockup-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* Badge System */
+  .badge-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 64px;
+  }
+
+  .badge {
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 16px 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+
+  .badge-hole {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.3);
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .badge-hole::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.4);
+  }
+
+  .badge-logo-area {
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .badge-event-name {
+    font-family: var(--font-display);
+    font-size: 22px;
+    text-align: center;
+    line-height: 1;
+    letter-spacing: 0.03em;
+  }
+
+  .badge-tagline {
+    font-family: var(--font-headline);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 6px;
+    opacity: 0.7;
+  }
+
+  .badge-name-area {
+    margin-top: auto;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 12px;
+  }
+
+  .badge-name {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .badge-title {
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-top: 2px;
+  }
+
+  /* PowerPoint Template */
+  .deck-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 64px;
+  }
+
+  .slide {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 16/9;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  }
+
+  .slide-inner {
+    position: absolute;
+    inset: 0;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Merch */
+  .merch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 64px;
+  }
+
+  .merch-card {
+    border-radius: 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 32px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .merch-visual {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .merch-title {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+  }
+
+  /* Wayfinding */
+  .wayfinding-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 64px;
+  }
+
+  .sign {
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sign-header {
+    padding: 12px 20px;
+    background: var(--gradient-flame);
+  }
+
+  .sign-header-text {
+    font-family: var(--font-headline);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .sign-body {
+    flex: 1;
+    padding: 24px 20px;
+    background: var(--ascent-smoke);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .sign-room {
+    font-family: var(--font-display);
+    font-size: 28px;
+    line-height: 1;
+    color: var(--ascent-warm-white);
+    letter-spacing: 0.03em;
+    margin-bottom: 4px;
+  }
+
+  .sign-event {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.5;
+  }
+
+  .sign-arrow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .arrow-line {
+    flex: 1;
+    height: 1px;
+    background: var(--flame-orange);
+    opacity: 0.4;
+  }
+
+  .arrow-head {
+    color: var(--flame-amber);
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  /* Utility */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+  }
+
+  .rule-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 28px;
+  }
+
+  .rule-card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--gradient-flame);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 18px;
+  }
+
+  .rule-card-title {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ascent-warm-white);
+    margin-bottom: 10px;
+  }
+
+  .rule-card-body {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgba(250,247,244,0.5);
+  }
+
+  .chip {
+    display: inline-block;
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+    background: rgba(216,79,18,0.18);
+    color: var(--flame-amber);
+    border: 1px solid rgba(216,79,18,0.3);
+    margin-right: 6px;
+    margin-bottom: 6px;
+  }
+
+  .page-break {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+    margin: 0;
+  }
+
+  .full-bleed {
+    width: 100%;
+    padding: 0;
+  }
+
+  .bg-dark { background: var(--ascent-charcoal); }
+  .bg-smoke { background: var(--ascent-smoke); }
+  .bg-flame { background: var(--gradient-flame); }
+  .bg-warm { background: var(--ascent-cream); }
+
+  /* Ascent mark SVG container */
+  .ascent-mark {
+    display: inline-block;
+  }
+
+  /* Lanyard */
+  .lanyard-row {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    margin-bottom: 64px;
+    flex-wrap: wrap;
+  }
+
+  .lanyard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .lanyard-strap {
+    width: 32px;
+    height: 100px;
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .lanyard-text {
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    font-family: var(--font-headline);
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .lanyard-clip {
+    width: 20px;
+    height: 14px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 2px;
+    position: relative;
+  }
+
+  /* Tote bag */
+  .tote-visual {
+    position: relative;
+    background: var(--ascent-charcoal);
+    border-radius: 12px;
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 2px solid rgba(255,255,255,0.06);
+  }
+
+  /* Digital screen */
+  .digital-screen {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 9/16;
+    max-width: 240px;
+  }
+
+  .digital-screens-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 64px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .wide-screen {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 16/4;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  /* Footer */
+  .doc-footer {
+    background: #0D0D0D;
+    padding: 60px 48px;
+    text-align: center;
+  }
+
+  .footer-logo-text {
+    font-family: var(--font-display);
+    font-size: 32px;
+    background: var(--gradient-flame);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+
+  .footer-meta {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+    margin-top: 8px;
+  }
+
+  /* Highlight box */
+  .highlight-box {
+    border-left: 4px solid var(--flame-orange);
+    background: rgba(216,79,18,0.08);
+    border-radius: 0 8px 8px 0;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+  }
+
+  .highlight-box-text {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: rgba(250,247,244,0.75);
+    font-style: italic;
+  }
+
+  /* TOC */
+  .toc-item {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .toc-num {
+    font-family: var(--font-headline);
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--flame-amber);
+    min-width: 28px;
+  }
+
+  .toc-name {
+    font-family: var(--font-headline);
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ascent-warm-white);
+    flex: 1;
+  }
+
+  .toc-dots {
+    flex: 1;
+    border-bottom: 1px dotted rgba(255,255,255,0.1);
+    margin: 0 8px;
+  }
+
+  /* ─── MOBILE RESPONSIVE ─── */
+  @media (max-width: 768px) {
+
+    /* Section padding */
+    .section-block {
+      padding: 60px 20px;
+    }
+
+    /* Cover */
+    .cover {
+      padding: 60px 24px 100px;
+      min-height: 100svh;
+    }
+    .cover-label {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .cover-meta {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+    .cover-doc-info {
+      right: 20px;
+      bottom: 20px;
+      font-size: 9px;
+    }
+    .cover-supergraphic {
+      width: 280px;
+      height: 280px;
+      top: -30px;
+      right: -40px;
+    }
+    .cover-supergraphic-bl {
+      width: 240px;
+      height: 240px;
+    }
+
+    /* Multi-column → single column */
+    .two-col,
+    .three-col,
+    .palette-grid,
+    .app-grid,
+    .deck-grid,
+    .wayfinding-grid,
+    .supergraphic-showcase,
+    .type-specimen {
+      grid-template-columns: 1fr !important;
+      gap: 16px;
+    }
+
+    /* Badge grid: 2 cols on mobile */
+    .badge-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* Merch grid: 2 cols on mobile */
+    .merch-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* Palette swatches: 2-col on small */
+    .palette-grid,
+    .palette-5,
+    .palette-6 {
+      grid-template-columns: 1fr 1fr !important;
+    }
+
+    /* Section title */
+    .section-title {
+      font-size: clamp(32px, 9vw, 52px);
+    }
+
+    /* Section intro */
+    .section-intro {
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+
+    /* Rule cards */
+    .rule-card {
+      padding: 20px;
+    }
+
+    /* Type display example scale */
+    .type-display-ex {
+      font-size: clamp(28px, 8vw, 48px);
+    }
+    .type-headline-ex {
+      font-size: clamp(20px, 6vw, 28px);
+    }
+
+    /* Supergraphic cards */
+    .sg-card {
+      min-height: 180px;
+    }
+
+    /* App cards */
+    .app-card {
+      min-height: 220px;
+    }
+    .app-card-inner {
+      padding: 16px 20px 12px;
+    }
+
+    /* Gradient swatch label */
+    .gradient-swatch-label {
+      font-size: 14px;
+    }
+
+    /* TOC two-col → one */
+    .toc-item {
+      padding: 12px 0;
+    }
+    .toc-name {
+      font-size: 13px;
+    }
+
+    /* Wide screens */
+    .wide-screen {
+      aspect-ratio: 16/5;
+    }
+
+    /* Wayfinding sign body text */
+    .sign-room {
+      font-size: 22px;
+    }
+
+    /* Lanyard row */
+    .lanyard-row {
+      gap: 20px;
+      justify-content: center;
+    }
+
+    /* Highlight box */
+    .highlight-box {
+      padding: 16px 18px;
+    }
+    .highlight-box-text {
+      font-size: 13px;
+    }
+
+    /* Usage table: make scrollable */
+    .usage-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 48px;
+    }
+    .usage-table {
+      min-width: 600px;
+      margin-bottom: 0;
+    }
+
+    /* Chip tags */
+    .chip {
+      font-size: 9px;
+      padding: 3px 10px;
+    }
+
+    /* Footer */
+    .doc-footer {
+      padding: 48px 24px;
+    }
+    .footer-logo-text {
+      font-size: 24px;
+    }
+
+    /* Badge font scale */
+    .badge-event-name {
+      font-size: 17px;
+    }
+    .badge-name {
+      font-size: 13px;
+    }
+    .badge-tagline {
+      font-size: 6px;
+    }
+
+    /* Slide mockups stay 2-col but shrink gracefully */
+    .deck-grid {
+      grid-template-columns: 1fr !important;
+      gap: 16px;
+    }
+
+    /* Digital screens row: wrap nicely */
+    .digital-screens-row {
+      flex-direction: column;
+      align-items: center;
+    }
+    .digital-screen {
+      max-width: 160px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-block {
+      padding: 48px 16px;
+    }
+    .cover {
+      padding: 48px 16px 80px;
+    }
+    .badge-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .merch-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .palette-grid {
+      grid-template-columns: 1fr 1fr !important;
+    }
+    .section-title {
+      font-size: clamp(28px, 10vw, 44px);
+    }
+    .merch-card {
+      padding: 16px 12px 14px;
+    }
+    .rule-card {
+      padding: 16px;
+    }
+    .toc-dots {
+      display: none;
+    }
+    .toc-item {
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+  }
+
+  /* Usage table */
+  .usage-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 48px;
+  }
+
+  .usage-table th {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--flame-amber);
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .usage-table td {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+
+  .usage-table tr:last-child td { border-bottom: none; }
+
+  /* Capsule tags */
+  .tag-do {
+    display: inline-block;
+    background: rgba(34,197,94,0.12);
+    color: #4ade80;
+    border: 1px solid rgba(34,197,94,0.2);
+    font-size: 9px;
+    font-family: var(--font-headline);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 100px;
+    margin-right: 4px;
+  }
+
+  .tag-dont {
+    display: inline-block;
+    background: rgba(239,68,68,0.12);
+    color: #f87171;
+    border: 1px solid rgba(239,68,68,0.2);
+    font-size: 9px;
+    font-family: var(--font-headline);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 100px;
+    margin-right: 4px;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ════════════════ COVER ════════════════ -->
+<section class="cover">
+  <div class="cover-bg"></div>
+
+  <!-- Background supergraphic: Ascent chevron large -->
+  <svg class="cover-supergraphic" viewBox="0 0 400 400" fill="none">
+    <path d="M200 20 L380 370 L20 370 Z" fill="url(#gfx1)" />
+    <path d="M200 80 L340 370 L60 370 Z" fill="none" stroke="white" stroke-width="1.5"/>
+    <defs>
+      <linearGradient id="gfx1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#F5A623"/>
+        <stop offset="100%" stop-color="#A01E04"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <svg class="cover-supergraphic-bl" viewBox="0 0 400 400" fill="none">
+    <path d="M200 20 L380 370 L20 370 Z" fill="url(#gfx2)" />
+    <defs>
+      <linearGradient id="gfx2" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#F5A623"/>
+        <stop offset="100%" stop-color="#A01E04"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <div class="cover-label">Ascent Hospitality Management — Brand Identity System</div>
+
+  <div class="cover-title">ASCENT<br>TOGETHER</div>
+  <div class="cover-sub">2026 Convention Identity System</div>
+  <div class="cover-divider"></div>
+  <div class="cover-meta">Our Brands. One Future. &nbsp;·&nbsp; North Carolina &nbsp;·&nbsp; Huddle House × Perkins</div>
+
+  <div class="cover-doc-info">
+    Brand System Document<br>
+    Version 1.0 — Internal Use Only<br>
+    Ascent Creative Department
+  </div>
+</section>
+
+<!-- ════════════════ TABLE OF CONTENTS ════════════════ -->
+<section style="background: var(--ascent-smoke);">
+  <div class="section-block" style="padding-top: 80px; padding-bottom: 80px;">
+    <div class="section-number">Index</div>
+    <div class="section-title" style="margin-bottom: 48px;">Table of <span>Contents</span></div>
+
+    <div class="two-col">
+      <div>
+        <div class="toc-item">
+          <span class="toc-num">01</span>
+          <span class="toc-name">Brand DNA & Creative Brief</span>
+          <span class="toc-dots"></span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">02</span>
+          <span class="toc-name">Color System</span>
+          <span class="toc-dots"></span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">03</span>
+          <span class="toc-name">Typography System</span>
+          <span class="toc-dots"></span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">04</span>
+          <span class="toc-name">Graphic Devices & Supergraphics</span>
+          <span class="toc-dots"></span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">05</span>
+          <span class="toc-name">Logo & Lock-up Rules</span>
+          <span class="toc-dots"></span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">06</span>
+          <span class="toc-name">Keynote Stage & Lighting</span>
+          <span class="toc-dots"></span>
+        </div>
+      </div>
+      <div>
+        <div class="toc-item">
+          <span class="toc-num">07</span>
+          <span class="toc-name">PowerPoint / Deck Templates</span>
+          <span class="toc-dots"></span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">08</span>
+          <span class="toc-name">Badges & Lanyards</span>
+          <span class="toc-dots"></span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">09</span>
+          <span class="toc-name">Wayfinding & Signage</span>
+          <span class="toc-dots"></span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">10</span>
+          <span class="toc-name">Digital Screens</span>
+          <span class="toc-dots"></span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">11</span>
+          <span class="toc-name">Merch & Swag Direction</span>
+          <span class="toc-dots"></span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">12</span>
+          <span class="toc-name">Print Collateral & Communications</span>
+          <span class="toc-dots"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+<!-- ════════════════ 01 BRAND DNA ════════════════ -->
+<section class="bg-dark">
+  <div class="section-block">
+    <div class="section-number">Section 01</div>
+    <div class="section-title">Brand <span>DNA</span></div>
+    <p class="section-intro">Everything in this system extends from a single approved hero lock. Not around it. Not beside it. From within it — drawing from its energy, structure, and momentum to create a coherent, immersive world.</p>
+
+    <div class="highlight-box">
+      <p class="highlight-box-text">"Ascent Together is not a generic company conference. It is a rallying moment. The brand world must feel like it's in motion — like the whole organization is leaning forward, climbing, converging on something meaningful. Warm. Bold. Earned. Never slick for its own sake."</p>
+    </div>
+
+    <div class="three-col" style="margin-bottom: 64px;">
+      <div class="rule-card">
+        <div class="rule-card-icon">↑</div>
+        <div class="rule-card-title">Upward Momentum</div>
+        <div class="rule-card-body">Every layout, composition, and typographic treatment should carry a sense of upward motion. Angles rise. Layers stack. Nothing sits flat. The Ascent chevron mark is the visual engine driving all spatial decisions.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card-icon">◈</div>
+        <div class="rule-card-title">Dimensional Warmth</div>
+        <div class="rule-card-body">The hero lock lives in 3D space. Shadows, highlights, and layered ribbon forms give it mass. The system carries this into every touchpoint — depth through shadow, warmth through the flame gradient, texture in print production.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card-icon">⬡</div>
+        <div class="rule-card-title">Two Brands, One Voice</div>
+        <div class="rule-card-body">Huddle House and Perkins exist within the Ascent Together event identity as partners, not competitors. The system gives each brand equity without fragmenting the convention's singular visual authority.</div>
+      </div>
+    </div>
+
+    <div class="section-number" style="margin-bottom: 16px;">Brand Personality Spectrum</div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span class="chip">Bold</span>
+      <span class="chip">Human</span>
+      <span class="chip">Energetic</span>
+      <span class="chip">Earned</span>
+      <span class="chip">Warm</span>
+      <span class="chip">Unified</span>
+      <span class="chip">Forward-Leaning</span>
+      <span class="chip">Dimensional</span>
+      <span class="chip">Grounded</span>
+      <span class="chip">Celebratory</span>
+      <span class="chip">Purposeful</span>
+      <span class="chip">Best-in-Class</span>
+    </div>
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+<!-- ════════════════ 02 COLOR SYSTEM ════════════════ -->
+<section style="background: #141414;">
+  <div class="section-block">
+    <div class="section-number">Section 02</div>
+    <div class="section-title">Color <span>System</span></div>
+    <p class="section-intro">The palette is derived directly from the approved hero lock. Five flame tones create the primary energy. Three neutrals anchor and ground. All combinations are optimized for large-format print, digital screens, and stage environments.</p>
+
+    <div class="section-number" style="margin-bottom: 20px;">Primary — The Flame Family</div>
+    <div class="palette-grid palette-5" style="grid-template-columns: repeat(5, 1fr); margin-bottom: 48px;">
+      <div class="swatch">
+        <div class="swatch-color" style="background: #F5A623;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Flame Gold</span>
+          <span class="swatch-hex">#F5A623 · PMS 137</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #E8751A;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Flame Amber</span>
+          <span class="swatch-hex">#E8751A · PMS 151</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #D94F12;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Flame Orange</span>
+          <span class="swatch-hex">#D94F12 · PMS 1665</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #C0320A;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Flame Red</span>
+          <span class="swatch-hex">#C0320A · PMS 7526</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #A01E04;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Flame Deep</span>
+          <span class="swatch-hex">#A01E04 · PMS 484</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-number" style="margin-bottom: 20px;">Neutrals — Anchor Palette</div>
+    <div class="palette-grid palette-6" style="grid-template-columns: repeat(6, 1fr); margin-bottom: 48px;">
+      <div class="swatch">
+        <div class="swatch-color" style="background: #1A1A1A;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Ascent Charcoal</span>
+          <span class="swatch-hex">#1A1A1A</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #2D2D2D;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Ascent Smoke</span>
+          <span class="swatch-hex">#2D2D2D</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #4A4A4A;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Ascent Slate</span>
+          <span class="swatch-hex">#4A4A4A</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #FAF7F4;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name" style="color: #1A1A1A;">Warm White</span>
+          <span class="swatch-hex" style="color: rgba(0,0,0,0.4);">#FAF7F4</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #F2ECE4;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name" style="color: #1A1A1A;">Ascent Cream</span>
+          <span class="swatch-hex" style="color: rgba(0,0,0,0.4);">#F2ECE4</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #E8E0D4;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name" style="color: #1A1A1A;">Ascent Pearl</span>
+          <span class="swatch-hex" style="color: rgba(0,0,0,0.4);">#E8E0D4</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-number" style="margin-bottom: 20px;">Primary Gradient — The Ascent Flame</div>
+    <div class="gradient-swatch">
+      <span class="gradient-swatch-label">The Ascent Flame · 135° · Gold → Deep Red</span>
+    </div>
+
+    <div class="section-number" style="margin-bottom: 20px;">Color Usage Logic</div>
+    <div class="usage-table-wrap"><table class="usage-table">
+      <thead>
+        <tr>
+          <th>Context</th>
+          <th>Background</th>
+          <th>Primary Type</th>
+          <th>Accent / CTA</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Keynote Stage / Large Format</td>
+          <td>Charcoal or Deep Red</td>
+          <td>Warm White</td>
+          <td>Flame Gradient</td>
+          <td>Maximize gradient presence on hero moments</td>
+        </tr>
+        <tr>
+          <td>PowerPoint Decks</td>
+          <td>Charcoal or Warm White</td>
+          <td>Warm White / Charcoal</td>
+          <td>Flame Orange, Amber</td>
+          <td>Title slides use dark BG; content slides can flip light</td>
+        </tr>
+        <tr>
+          <td>Signage / Wayfinding</td>
+          <td>Smoke + Flame header band</td>
+          <td>Warm White</td>
+          <td>Flame Amber</td>
+          <td>Arrow elements always in Flame Amber</td>
+        </tr>
+        <tr>
+          <td>Badges</td>
+          <td>Dark variant or Cream light variant</td>
+          <td>White or Charcoal</td>
+          <td>Gradient stripe</td>
+          <td>Role tier differentiated by badge colorway</td>
+        </tr>
+        <tr>
+          <td>Print Collateral</td>
+          <td>Cream / Pearl</td>
+          <td>Charcoal</td>
+          <td>Flame Red, Orange</td>
+          <td>Use spot UV or foil on Flame gradient for print premium</td>
+        </tr>
+        <tr>
+          <td>Digital Screens / Loops</td>
+          <td>Charcoal or animated dark</td>
+          <td>Warm White</td>
+          <td>Full gradient</td>
+          <td>Animated gradient sweeps reinforce momentum</td>
+        </tr>
+        <tr>
+          <td>Merch</td>
+          <td>Charcoal garments primary</td>
+          <td>Flame gradient print</td>
+          <td>Cream secondary</td>
+          <td>Limited light cream colorways for contrast variety</td>
+        </tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+<!-- ════════════════ 03 TYPOGRAPHY ════════════════ -->
+<section class="bg-dark">
+  <div class="section-block">
+    <div class="section-number">Section 03</div>
+    <div class="section-title">Type <span>System</span></div>
+    <p class="section-intro">Three roles. Clear hierarchy. The display face mirrors the hero lock's condensed, stacked authority. The headline face extends it into functional communication. Body type provides warmth and readability in longer-form content.</p>
+
+    <div style="margin-bottom: 48px;">
+
+      <div class="type-row flame">
+        <div class="type-meta">Display — Bebas Neue · Hero moments, section titles, environmental lettering</div>
+        <div class="type-display-ex">ASCENT TOGETHER 2026</div>
+      </div>
+
+      <div class="type-row amber">
+        <div class="type-meta">Headline — Barlow Condensed ExtraBold / 700-900 · Subheads, labels, speaker names, slide titles</div>
+        <div class="type-headline-ex">Our Brands. One Future.</div>
+      </div>
+
+      <div class="type-row amber" style="border-color: var(--flame-amber);">
+        <div class="type-meta">Eyebrow / Overline — Barlow Condensed SemiBold · All-caps, wide tracking</div>
+        <div class="type-subhead-ex">Keynote Address · Main Stage · 9:00 AM</div>
+      </div>
+
+      <div class="type-row slate">
+        <div class="type-meta">Body — Barlow Light / Regular · Prose, program descriptions, internal comms</div>
+        <div class="type-body-ex">Ascent Together is our annual leadership convention bringing Huddle House and Perkins teams together to align on strategy, celebrate wins, and chart the path forward for our brands. This year, we gather in North Carolina with one shared purpose: to rise together.</div>
+      </div>
+
+    </div>
+
+    <div class="section-number" style="margin-bottom: 20px;">Typographic Rules</div>
+    <div class="three-col">
+      <div class="rule-card">
+        <div class="rule-card-title">Size Relationships</div>
+        <div class="rule-card-body">Display: 48–120pt environmental, 32–72pt slide title. Headline: 14–40pt. Eyebrow: 9–13pt, always 0.25–0.35em tracking. Body: 13–16pt, never smaller than 11pt in print.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card-title">Color on Type</div>
+        <div class="rule-card-body">Display type takes the flame gradient as a fill on dark backgrounds, or Warm White reversed. Never place gradient type on light backgrounds. Eyebrows are always Flame Amber, never gradient.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card-title">Stacking Logic</div>
+        <div class="rule-card-body">Headline stacking should echo the hero lock: tight leading (0.9–1.05), full caps, flush left. Never center-align blocks of more than 3 lines. Left margin anchoring creates a consistent reading spine across all materials.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+<!-- ════════════════ 04 GRAPHIC DEVICES ════════════════ -->
+<section style="background: #141414;">
+  <div class="section-block">
+    <div class="section-number">Section 04</div>
+    <div class="section-title">Graphic Devices &amp; <span>Supergraphics</span></div>
+    <p class="section-intro">The system uses four core graphic devices derived from the hero lock's geometry. These are not decorations — they are structural tools that create space, depth, and energy across every surface.</p>
+
+    <div class="supergraphic-showcase">
+
+      <!-- Device 1: Chevron mark -->
+      <div class="sg-card" style="background: var(--ascent-smoke);">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.85;" viewBox="0 0 300 240" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="chev1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#F5A623"/>
+              <stop offset="100%" stop-color="#A01E04"/>
+            </linearGradient>
+          </defs>
+          <path d="M150 20 L260 200 L40 200 Z" fill="url(#chev1)" opacity="0.9"/>
+          <path d="M150 60 L240 200 L60 200 Z" fill="none" stroke="white" stroke-width="2" opacity="0.2"/>
+        </svg>
+        <div class="sg-card-label" style="position:relative;z-index:2;">Ascent Chevron — Primary Mark</div>
+      </div>
+
+      <!-- Device 2: Diagonal slash band -->
+      <div class="sg-card" style="background: #0A0A0A;">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 300 240" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="band1" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#F5A623"/>
+              <stop offset="100%" stop-color="#A01E04"/>
+            </linearGradient>
+          </defs>
+          <polygon points="0,80 300,0 300,50 0,130" fill="url(#band1)" opacity="0.9"/>
+          <polygon points="0,140 300,60 300,72 0,152" fill="white" opacity="0.08"/>
+        </svg>
+        <div class="sg-card-label">Diagonal Slash Band — Momentum Device</div>
+      </div>
+
+      <!-- Device 3: Stacked ribbon -->
+      <div class="sg-card" style="background: var(--ascent-smoke);">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 300 240" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="rib1" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#E8751A"/>
+              <stop offset="100%" stop-color="#A01E04"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="70" width="300" height="48" fill="url(#rib1)" rx="0"/>
+          <rect x="0" y="125" width="300" height="32" fill="#C0320A" rx="0" opacity="0.7"/>
+          <rect x="0" y="163" width="300" height="20" fill="#A01E04" rx="0" opacity="0.5"/>
+          <!-- shadow fold -->
+          <polygon points="0,118 300,118 300,125 0,118" fill="black" opacity="0.25"/>
+          <polygon points="0,157 300,157 300,163 0,157" fill="black" opacity="0.25"/>
+          <text x="16" y="103" font-family="'Bebas Neue',sans-serif" font-size="28" fill="white" opacity="0.9">ASCENT TOGETHER</text>
+          <text x="16" y="148" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="13" fill="white" opacity="0.7" letter-spacing="3">OUR BRANDS. ONE FUTURE.</text>
+        </svg>
+        <div class="sg-card-label">Layered Ribbon System — Type Container</div>
+      </div>
+
+      <!-- Device 4: corner chevron crop -->
+      <div class="sg-card" style="background: #0D0D0D;">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 300 240" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="crp1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#F5A623"/>
+              <stop offset="100%" stop-color="#C0320A"/>
+            </linearGradient>
+          </defs>
+          <!-- Large chevron cropped to top-right corner -->
+          <path d="M180 -60 L360 180 L360 -60 Z" fill="url(#crp1)" opacity="0.85"/>
+          <path d="M200 -60 L360 200 L360 -60 Z" fill="none" stroke="white" stroke-width="1.5" opacity="0.12"/>
+          <path d="M220 -60 L360 220 L360 -60 Z" fill="none" stroke="white" stroke-width="1" opacity="0.07"/>
+        </svg>
+        <div class="sg-card-label">Corner Chevron Crop — Corner Anchor</div>
+      </div>
+
+      <!-- Device 5: flame bar -->
+      <div class="sg-card" style="background: #1A1A1A;">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 300 240" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="flb1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#F5A623"/>
+              <stop offset="100%" stop-color="#A01E04"/>
+            </linearGradient>
+          </defs>
+          <rect x="16" y="30" width="8" height="180" rx="4" fill="url(#flb1)"/>
+          <rect x="32" y="60" width="8" height="150" rx="4" fill="url(#flb1)" opacity="0.5"/>
+          <rect x="48" y="90" width="8" height="120" rx="4" fill="url(#flb1)" opacity="0.25"/>
+        </svg>
+        <div class="sg-card-label">Vertical Flame Bars — Margin & Divider</div>
+      </div>
+
+      <!-- Device 6: full-bleed gradient plane -->
+      <div class="sg-card" style="background: var(--gradient-flame);">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.15;" viewBox="0 0 300 240" preserveAspectRatio="none">
+          <path d="M150 -20 L300 180 L0 180 Z" fill="white"/>
+          <path d="M150 30 L270 180 L30 180 Z" fill="white"/>
+        </svg>
+        <div class="sg-card-label" style="color: rgba(255,255,255,0.8);">Full-Bleed Flame — Hero Backgrounds</div>
+      </div>
+
+    </div>
+
+    <div class="section-number" style="margin-bottom: 16px;">Usage & Application Rules</div>
+    <div class="three-col">
+      <div class="rule-card">
+        <div class="rule-card-title">Scale with Intent</div>
+        <div class="rule-card-body">Supergraphics should always extend beyond their container. Never contain a chevron fully within a frame — crop it dramatically. The impression of infinite scale reinforces upward momentum.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card-title">Layering Logic</div>
+        <div class="rule-card-body">Darker elements always sit behind lighter gradient elements. Shadow falls downward and to the right to echo the hero lock's 3D perspective. Never reverse the shadow direction.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card-title">Flame Bar Protocol</div>
+        <div class="rule-card-body">Vertical flame bars are used only as margin devices, column separators, or editorial pull-quote accents. They appear in groups of 1–3, descending in opacity. Never use more than 3.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+<!-- ════════════════ 05 LOGO RULES ════════════════ -->
+<section class="bg-dark">
+  <div class="section-block">
+    <div class="section-number">Section 05</div>
+    <div class="section-title">Logo &amp; <span>Lock-up Rules</span></div>
+    <p class="section-intro">The hero lock is the approved master asset and must never be redrawn, re-typed, or recreated from scratch. All usage must use supplied production files. These rules govern how it co-exists with brand partner logos and event sub-elements.</p>
+
+    <!-- Lock-up demo -->
+    <div style="background: var(--ascent-smoke); border-radius: 12px; padding: 60px 48px; margin-bottom: 48px; text-align: center; position: relative; overflow: hidden;">
+      <svg style="position:absolute;right:-60px;top:-40px;width:300px;height:300px;opacity:0.05;" viewBox="0 0 400 400">
+        <path d="M200 20 L380 370 L20 370 Z" fill="#F5A623"/>
+      </svg>
+
+      <!-- Mock hero lockup rendered in SVG/CSS -->
+      <div style="display:inline-block; text-align: center;">
+        <svg width="320" height="60" viewBox="0 0 320 60" style="margin-bottom: 12px;">
+          <defs>
+            <linearGradient id="chev_sm" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#F5A623"/>
+              <stop offset="100%" stop-color="#D94F12"/>
+            </linearGradient>
+          </defs>
+          <polygon points="40,2 60,30 20,30" fill="url(#chev_sm)"/>
+          <polygon points="40,10 56,30 24,30" fill="none" stroke="white" stroke-width="1" opacity="0.3"/>
+        </svg>
+
+        <div style="font-family: 'Bebas Neue', sans-serif; font-size: 72px; line-height: 0.88; background: linear-gradient(135deg, #F5A623, #E8751A, #D94F12, #C0320A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 0.02em;">ASCENT<br>TOGETHER</div>
+        <div style="background: linear-gradient(90deg, #E8751A, #C0320A); padding: 8px 32px; margin-top: 8px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.25em; text-transform: uppercase; color: white;">OUR BRANDS. ONE FUTURE.</div>
+        <div style="font-family: 'Bebas Neue', sans-serif; font-size: 52px; background: linear-gradient(90deg, #D94F12, #A01E04); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-top: 4px; letter-spacing: 0.03em;">2026</div>
+      </div>
+
+      <div style="position: absolute; bottom: 20px; right: 24px; font-family: var(--font-body); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.15);">Approved Hero Lock — Do Not Alter</div>
+    </div>
+
+    <div class="two-col" style="margin-bottom: 48px;">
+      <div>
+        <div class="section-number" style="margin-bottom: 16px;">Clear Space</div>
+        <div class="rule-card">
+          <div class="rule-card-body">Minimum clear space equals the cap-height of the "A" in ASCENT on all four sides. In large-format applications, double this. The hero lock must never be placed within 20px of any edge in digital contexts.</div>
+        </div>
+      </div>
+      <div>
+        <div class="section-number" style="margin-bottom: 16px;">Sub-Brand Placement</div>
+        <div class="rule-card">
+          <div class="rule-card-body">Huddle House and Perkins logos appear flanking the Ascent chevron mark, as shown in the approved lock. In standalone event materials (badges, signage, agendas), they may appear as separate co-brand bugs in the footer zone, at 60% the scale of the event lock.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-number" style="margin-bottom: 20px;"><span class="tag-dont">Don't</span> — Prohibited Alterations</div>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px;">
+      <span style="background:rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15); border-radius: 8px; padding: 10px 16px; font-family: var(--font-body); font-size: 13px; color: rgba(255,255,255,0.55);">❌ Re-type any element of the lock</span>
+      <span style="background:rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15); border-radius: 8px; padding: 10px 16px; font-family: var(--font-body); font-size: 13px; color: rgba(255,255,255,0.55);">❌ Change gradient direction or colors</span>
+      <span style="background:rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15); border-radius: 8px; padding: 10px 16px; font-family: var(--font-body); font-size: 13px; color: rgba(255,255,255,0.55);">❌ Remove the "2026" from the primary lock</span>
+      <span style="background:rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15); border-radius: 8px; padding: 10px 16px; font-family: var(--font-body); font-size: 13px; color: rgba(255,255,255,0.55);">❌ Place on low-contrast backgrounds</span>
+      <span style="background:rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15); border-radius: 8px; padding: 10px 16px; font-family: var(--font-body); font-size: 13px; color: rgba(255,255,255,0.55);">❌ Rotate or skew the lock</span>
+      <span style="background:rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15); border-radius: 8px; padding: 10px 16px; font-family: var(--font-body); font-size: 13px; color: rgba(255,255,255,0.55);">❌ Apply drop shadows to the lock itself</span>
+      <span style="background:rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15); border-radius: 8px; padding: 10px 16px; font-family: var(--font-body); font-size: 13px; color: rgba(255,255,255,0.55);">❌ Surround with competing graphic devices</span>
+      <span style="background:rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15); border-radius: 8px; padding: 10px 16px; font-family: var(--font-body); font-size: 13px; color: rgba(255,255,255,0.55);">❌ Use on busy photographic backgrounds</span>
+    </div>
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+<!-- ════════════════ 06 KEYNOTE STAGE ════════════════ -->
+<section style="background: #141414;">
+  <div class="section-block">
+    <div class="section-number">Section 06</div>
+    <div class="section-title">Keynote Stage &amp; <span>Lighting</span></div>
+    <p class="section-intro">The main stage is the highest-impact moment of the convention. The visual environment must feel like the hero lock come to life in three dimensions — warm, dramatic, and alive with energy.</p>
+
+    <!-- Stage mockup -->
+    <div class="keynote-mockup" style="margin-bottom: 32px;">
+      <div class="keynote-mockup-inner">
+        <!-- Stage background -->
+        <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 900 400" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <radialGradient id="stagelight" cx="50%" cy="30%" r="60%">
+              <stop offset="0%" stop-color="#E8751A" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#0A0A0A" stop-opacity="1"/>
+            </radialGradient>
+            <linearGradient id="stagechev" x1="0.5" y1="0" x2="0.5" y2="1">
+              <stop offset="0%" stop-color="#F5A623" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#A01E04" stop-opacity="0.08"/>
+            </linearGradient>
+          </defs>
+          <rect width="900" height="400" fill="#0A0A0A"/>
+          <rect width="900" height="400" fill="url(#stagelight)"/>
+          <!-- Large chevron supergraphic background -->
+          <path d="M450 -100 L820 400 L80 400 Z" fill="url(#stagechev)"/>
+          <path d="M450 20 L760 400 L140 400 Z" fill="none" stroke="#E8751A" stroke-width="1.5" opacity="0.15"/>
+          <path d="M450 80 L720 400 L180 400 Z" fill="none" stroke="#F5A623" stroke-width="1" opacity="0.08"/>
+          <!-- LED panels suggestion -->
+          <rect x="0" y="0" width="140" height="400" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+          <rect x="760" y="0" width="140" height="400" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+          <!-- Gradient floor reflection -->
+          <rect x="0" y="320" width="900" height="80" fill="url(#stagelight)" opacity="0.3"/>
+          <!-- Stage edge -->
+          <rect x="100" y="360" width="700" height="4" rx="2" fill="url(#stagechev)" opacity="0.5"/>
+          <!-- Lock-up centered -->
+          <text x="450" y="185" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="68" fill="url(#gradstage)">ASCENT TOGETHER</text>
+          <text x="450" y="240" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="15" letter-spacing="6" fill="rgba(255,255,255,0.55)">OUR BRANDS. ONE FUTURE.</text>
+          <text x="450" y="300" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="52" fill="#D94F12" opacity="0.9">2026</text>
+          <defs>
+            <linearGradient id="gradstage" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#F5A623"/>
+              <stop offset="50%" stop-color="#D94F12"/>
+              <stop offset="100%" stop-color="#A01E04"/>
+            </linearGradient>
+          </defs>
+          <!-- Podium suggestion -->
+          <rect x="415" y="330" width="70" height="30" rx="2" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="three-col" style="margin-bottom: 48px;">
+      <div class="rule-card">
+        <div class="rule-card-title">LED Wall Direction</div>
+        <div class="rule-card-body">Center LED displays the hero lock on a deep charcoal background with a slow, breathing radial glow in Flame Amber. Side panels run animated vertical flame bars. During speaker moments, the lock recedes to 15% opacity behind speaker content.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card-title">Lighting Design</div>
+        <div class="rule-card-body">Key wash: warm amber-orange (Rosco 321 or equivalent). Stage floor: deep red accent wash from downstage. Chevron gobo projected on upstage cyc. Uplighting on any columns or architectural elements in Flame Deep or Flame Orange.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card-title">Stage Deck & Scenic</div>
+        <div class="rule-card-body">Recommended: matte charcoal stage deck surface. Podium in charcoal with gradient front panel. Flanking totems or pillars in Ascent Smoke with gradient-edged vertical flame bars. 3D dimensional chevron prop as stage focal point.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+<!-- ════════════════ 07 DECK TEMPLATES ════════════════ -->
+<section class="bg-dark">
+  <div class="section-block">
+    <div class="section-number">Section 07</div>
+    <div class="section-title">PowerPoint &amp; <span>Deck Templates</span></div>
+    <p class="section-intro">Five core slide layouts cover every presentation need. Dark-first design ensures they read powerfully on conference screens. A light variant set is provided for print distribution.</p>
+
+    <div class="deck-grid">
+
+      <!-- Slide 1: Title -->
+      <div class="slide">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice">
+          <rect width="640" height="360" fill="#111"/>
+          <defs>
+            <radialGradient id="sl1bg" cx="70%" cy="20%" r="55%">
+              <stop offset="0%" stop-color="#E8751A" stop-opacity="0.2"/>
+              <stop offset="100%" stop-color="#111" stop-opacity="1"/>
+            </radialGradient>
+            <linearGradient id="sl1chev" x1="0.5" y1="0" x2="0.5" y2="1">
+              <stop offset="0%" stop-color="#F5A623" stop-opacity="0.2"/>
+              <stop offset="100%" stop-color="#A01E04" stop-opacity="0.05"/>
+            </linearGradient>
+            <linearGradient id="sl1g" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#F5A623"/>
+              <stop offset="100%" stop-color="#A01E04"/>
+            </linearGradient>
+          </defs>
+          <rect width="640" height="360" fill="url(#sl1bg)"/>
+          <path d="M560 -80 L700 200 L420 200 Z" fill="url(#sl1chev)"/>
+          <rect x="0" y="0" width="6" height="360" fill="url(#sl1g)"/>
+          <text x="48" y="130" font-family="'Bebas Neue',sans-serif" font-size="48" fill="url(#sl1g)">PRESENTATION</text>
+          <text x="48" y="172" font-family="'Bebas Neue',sans-serif" font-size="48" fill="white" opacity="0.9">TITLE HERE</text>
+          <rect x="48" y="188" width="180" height="2" fill="url(#sl1g)" opacity="0.6"/>
+          <text x="48" y="212" font-family="'Barlow Condensed',sans-serif" font-weight="600" font-size="11" fill="rgba(255,255,255,0.45)" letter-spacing="3">PRESENTER NAME · ROLE · DATE</text>
+          <!-- Mini lock bottom right -->
+          <text x="540" y="330" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="16" fill="#D94F12" opacity="0.5">ASCENT TOGETHER 2026</text>
+        </svg>
+        <div style="position:absolute; bottom: 8px; left: 50%; transform: translateX(-50%); font-family: var(--font-body); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.25);">Title Slide — Dark</div>
+      </div>
+
+      <!-- Slide 2: Section header -->
+      <div class="slide">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="sl2g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#F5A623"/>
+              <stop offset="100%" stop-color="#A01E04"/>
+            </linearGradient>
+          </defs>
+          <rect width="640" height="360" fill="url(#sl2g)"/>
+          <path d="M320 -80 L600 360 L40 360 Z" fill="white" opacity="0.07"/>
+          <path d="M320 0 L560 360 L80 360 Z" fill="white" opacity="0.04"/>
+          <text x="320" y="165" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="72" fill="white" opacity="0.95">SECTION 02</text>
+          <text x="320" y="215" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="14" letter-spacing="5" fill="rgba(255,255,255,0.6)">FINANCIAL PERFORMANCE</text>
+          <rect x="240" y="225" width="160" height="2" rx="1" fill="rgba(255,255,255,0.3)"/>
+        </svg>
+        <div style="position:absolute; bottom: 8px; left: 50%; transform: translateX(-50%); font-family: var(--font-body); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.25);">Section Header — Full Flame</div>
+      </div>
+
+      <!-- Slide 3: Content with chart area -->
+      <div class="slide">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="sl3g" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#F5A623"/>
+              <stop offset="100%" stop-color="#A01E04"/>
+            </linearGradient>
+          </defs>
+          <rect width="640" height="360" fill="#181818"/>
+          <rect x="0" y="0" width="640" height="56" fill="#111"/>
+          <rect x="0" y="54" width="640" height="2" fill="url(#sl3g)" opacity="0.4"/>
+          <rect x="0" y="0" width="4" height="56" fill="url(#sl3g)"/>
+          <text x="20" y="24" font-family="'Barlow Condensed',sans-serif" font-weight="600" font-size="9" fill="#E8751A" letter-spacing="3">ASCENT TOGETHER 2026</text>
+          <text x="20" y="46" font-family="'Bebas Neue',sans-serif" font-size="26" fill="white">SLIDE HEADLINE GOES HERE</text>
+          <!-- Content area placeholder -->
+          <rect x="20" y="74" width="300" height="240" rx="4" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+          <text x="170" y="200" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="10" fill="rgba(255,255,255,0.2)" letter-spacing="2">CONTENT / VISUAL AREA</text>
+          <!-- Data columns mock -->
+          <rect x="340" y="100" width="280" height="180" rx="4" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+          <rect x="356" y="220" width="36" height="48" rx="2" fill="#F5A623" opacity="0.7"/>
+          <rect x="400" y="180" width="36" height="88" rx="2" fill="#D94F12" opacity="0.8"/>
+          <rect x="444" y="155" width="36" height="113" rx="2" fill="#C0320A" opacity="0.9"/>
+          <rect x="488" y="135" width="36" height="133" rx="2" fill="#A01E04"/>
+          <rect x="532" y="120" width="36" height="148" rx="2" fill="#A01E04" opacity="0.6"/>
+          <!-- Page number -->
+          <text x="620" y="350" text-anchor="end" font-family="'Barlow Condensed',sans-serif" font-size="9" fill="rgba(255,255,255,0.15)" letter-spacing="2">04 / 24</text>
+        </svg>
+        <div style="position:absolute; bottom: 8px; left: 50%; transform: translateX(-50%); font-family: var(--font-body); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.25);">Content + Data — Dark</div>
+      </div>
+
+      <!-- Slide 4: Quote/callout -->
+      <div class="slide">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="sl4g" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#F5A623"/>
+              <stop offset="100%" stop-color="#A01E04"/>
+            </linearGradient>
+          </defs>
+          <rect width="640" height="360" fill="#FAF7F4"/>
+          <rect x="0" y="0" width="8" height="360" fill="url(#sl4g)"/>
+          <rect x="0" y="300" width="640" height="60" fill="#F2ECE4"/>
+          <!-- Large quote mark -->
+          <text x="48" y="120" font-family="'Bebas Neue',sans-serif" font-size="120" fill="#D94F12" opacity="0.08">"</text>
+          <text x="72" y="165" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="24" fill="#1A1A1A" opacity="0.9">The strength of our brands is</text>
+          <text x="72" y="198" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="24" fill="#1A1A1A" opacity="0.9">the strength of our people.</text>
+          <rect x="72" y="216" width="120" height="3" rx="1" fill="url(#sl4g)"/>
+          <text x="72" y="248" font-family="'Barlow Condensed',sans-serif" font-weight="600" font-size="11" fill="#1A1A1A" opacity="0.45" letter-spacing="2">— SPEAKER NAME, TITLE</text>
+          <text x="328" y="338" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="12" fill="#D94F12" opacity="0.4" letter-spacing="2">ASCENT TOGETHER 2026</text>
+        </svg>
+        <div style="position:absolute; bottom: 8px; left: 50%; transform: translateX(-50%); font-family: var(--font-body); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.25);">Quote / Pull Callout — Light</div>
+      </div>
+
+    </div>
+
+    <div class="three-col">
+      <div class="rule-card">
+        <div class="rule-card-title">Template Variants</div>
+        <div class="rule-card-body">5 layouts: Title, Section Header, Content+Visual, Data/Chart, Quote/Callout. Each has a Dark and Light variant. All include footer zone with event lock, page number, and session watermark.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card-title">Animation Style</div>
+        <div class="rule-card-body">Wipe-from-left on all body content. Flame bar "reveal" on slide headers — the gradient bar sweeps across before type appears. Transition between slides: push-up with 0.3s ease. No dissolves, no spins, no 3D effects.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card-title">Speaker Deck Rules</div>
+        <div class="rule-card-body">All speaker-submitted content must use the approved template. Creative team reviews all decks 5 business days before the event. No external brand elements or off-template slides permitted on main stage.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+<!-- ════════════════ 08 BADGES & LANYARDS ════════════════ -->
+<section style="background: #141414;">
+  <div class="section-block">
+    <div class="section-number">Section 08</div>
+    <div class="section-title">Badges &amp; <span>Lanyards</span></div>
+    <p class="section-intro">Four badge tiers create clear visual hierarchy while maintaining system cohesion. The badge is the most personal touchpoint — every attendee wears the brand. Print: 3.5" × 5" vertical, 3mm bleed, matte laminate with spot UV on gradient elements.</p>
+
+    <div class="badge-grid">
+
+      <!-- Executive badge -->
+      <div class="badge" style="background: linear-gradient(160deg, #1A1A1A 0%, #0D0D0D 100%); border: 1px solid rgba(245,166,35,0.25);">
+        <div class="badge-hole"></div>
+        <div style="width: 100%; height: 5px; background: linear-gradient(90deg, #F5A623, #A01E04); border-radius: 2px; margin-bottom: 16px;"></div>
+        <div class="badge-logo-area">
+          <svg width="32" height="24" viewBox="0 0 40 30">
+            <defs><linearGradient id="bchev1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F5A623"/><stop offset="100%" stop-color="#D94F12"/></linearGradient></defs>
+            <polygon points="20,2 38,28 2,28" fill="url(#bchev1)"/>
+          </svg>
+        </div>
+        <div class="badge-event-name" style="background: linear-gradient(135deg, #F5A623, #A01E04); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">ASCENT<br>TOGETHER</div>
+        <div class="badge-tagline" style="color: rgba(255,255,255,0.4);">Our Brands. One Future. · 2026</div>
+        <div class="badge-name-area">
+          <div class="badge-name" style="color: #F5A623;">FIRST NAME</div>
+          <div class="badge-title">Executive Leadership</div>
+        </div>
+      </div>
+
+      <!-- Speaker badge -->
+      <div class="badge" style="background: linear-gradient(160deg, #2A1208 0%, #1A0A04 100%); border: 1px solid rgba(216,79,18,0.3);">
+        <div class="badge-hole" style="border-color: rgba(216,79,18,0.4);"></div>
+        <div style="width: 100%; height: 5px; background: linear-gradient(90deg, #E8751A, #C0320A); border-radius: 2px; margin-bottom: 16px;"></div>
+        <div class="badge-logo-area">
+          <svg width="32" height="24" viewBox="0 0 40 30">
+            <defs><linearGradient id="bchev2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8751A"/><stop offset="100%" stop-color="#C0320A"/></linearGradient></defs>
+            <polygon points="20,2 38,28 2,28" fill="url(#bchev2)"/>
+          </svg>
+        </div>
+        <div class="badge-event-name" style="color: white;">ASCENT<br>TOGETHER</div>
+        <div class="badge-tagline" style="color: rgba(255,255,255,0.4);">Our Brands. One Future. · 2026</div>
+        <div class="badge-name-area" style="border-color: rgba(216,79,18,0.25);">
+          <div class="badge-name" style="color: var(--flame-amber);">FIRST NAME</div>
+          <div class="badge-title">Featured Speaker</div>
+        </div>
+      </div>
+
+      <!-- Attendee badge -->
+      <div class="badge" style="background: linear-gradient(160deg, #252525 0%, #181818 100%); border: 1px solid rgba(255,255,255,0.08);">
+        <div class="badge-hole" style="border-color: rgba(255,255,255,0.2);"></div>
+        <div style="width: 100%; height: 5px; background: linear-gradient(90deg, #D94F12, #A01E04); border-radius: 2px; margin-bottom: 16px;"></div>
+        <div class="badge-logo-area">
+          <svg width="32" height="24" viewBox="0 0 40 30">
+            <defs><linearGradient id="bchev3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#D94F12"/><stop offset="100%" stop-color="#A01E04"/></linearGradient></defs>
+            <polygon points="20,2 38,28 2,28" fill="url(#bchev3)"/>
+          </svg>
+        </div>
+        <div class="badge-event-name" style="color: white;">ASCENT<br>TOGETHER</div>
+        <div class="badge-tagline" style="color: rgba(255,255,255,0.35);">Our Brands. One Future. · 2026</div>
+        <div class="badge-name-area">
+          <div class="badge-name" style="color: white;">FIRST NAME</div>
+          <div class="badge-title" style="color: rgba(255,255,255,0.4);">Attendee</div>
+        </div>
+      </div>
+
+      <!-- Staff badge -->
+      <div class="badge" style="background: linear-gradient(160deg, #F2ECE4 0%, #E8E0D4 100%); border: 1px solid rgba(0,0,0,0.08);">
+        <div class="badge-hole" style="border-color: rgba(0,0,0,0.15);"></div>
+        <div style="width: 100%; height: 5px; background: linear-gradient(90deg, #D94F12, #A01E04); border-radius: 2px; margin-bottom: 16px;"></div>
+        <div class="badge-logo-area">
+          <svg width="32" height="24" viewBox="0 0 40 30">
+            <defs><linearGradient id="bchev4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#D94F12"/><stop offset="100%" stop-color="#A01E04"/></linearGradient></defs>
+            <polygon points="20,2 38,28 2,28" fill="url(#bchev4)"/>
+          </svg>
+        </div>
+        <div class="badge-event-name" style="color: #1A1A1A;">ASCENT<br>TOGETHER</div>
+        <div class="badge-tagline" style="color: rgba(0,0,0,0.35);">Our Brands. One Future. · 2026</div>
+        <div class="badge-name-area" style="border-color: rgba(0,0,0,0.1);">
+          <div class="badge-name" style="color: #1A1A1A;">FIRST NAME</div>
+          <div class="badge-title" style="color: rgba(0,0,0,0.4);">Event Staff</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Lanyard Row -->
+    <div class="section-number" style="margin-bottom: 24px;">Lanyard System</div>
+    <div class="lanyard-row">
+      <div class="lanyard">
+        <div class="lanyard-strap" style="background: linear-gradient(180deg, #F5A623, #E8751A, #D94F12, #C0320A, #A01E04);">
+          <div class="lanyard-text" style="color: rgba(255,255,255,0.5); font-family: var(--font-headline); font-size: 7px; font-weight: 800; letter-spacing: 0.3em; text-transform: uppercase; writing-mode: vertical-lr;">ASCENT TOGETHER 2026 · ASCENT TOGETHER 2026 ·</div>
+        </div>
+        <div class="lanyard-clip"></div>
+        <div style="font-family: var(--font-body); font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 0.1em; margin-top: 8px;">Gradient Flame</div>
+      </div>
+
+      <div class="lanyard">
+        <div class="lanyard-strap" style="background: #1A1A1A; border: 1px solid rgba(245,166,35,0.3); position: relative; overflow: hidden;">
+          <div style="position:absolute; left: 0; top: 0; width: 6px; height: 100%; background: linear-gradient(180deg, #F5A623, #A01E04);"></div>
+          <div class="lanyard-text" style="color: rgba(245,166,35,0.6); font-family: var(--font-headline); font-size: 7px; font-weight: 800; letter-spacing: 0.3em; text-transform: uppercase; writing-mode: vertical-lr; margin-left: 8px;">ASCENT TOGETHER 2026 ·</div>
+        </div>
+        <div class="lanyard-clip"></div>
+        <div style="font-family: var(--font-body); font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 0.1em; margin-top: 8px;">Charcoal + Gold</div>
+      </div>
+
+      <div class="lanyard">
+        <div class="lanyard-strap" style="background: #A01E04;">
+          <div class="lanyard-text" style="color: rgba(255,255,255,0.4); font-family: var(--font-headline); font-size: 7px; font-weight: 800; letter-spacing: 0.3em; text-transform: uppercase; writing-mode: vertical-lr;">ASCENT TOGETHER 2026 ·</div>
+        </div>
+        <div class="lanyard-clip"></div>
+        <div style="font-family: var(--font-body); font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 0.1em; margin-top: 8px;">Flame Deep (Staff)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+<!-- ════════════════ 09 WAYFINDING ════════════════ -->
+<section class="bg-dark">
+  <div class="section-block">
+    <div class="section-number">Section 09</div>
+    <div class="section-title">Wayfinding &amp; <span>Signage</span></div>
+    <p class="section-intro">The convention's wayfinding system is an extension of the brand — not a functional afterthought. Every sign carries brand DNA: the flame gradient header band, the Ascent chevron, bold condensed room IDs, and directional arrows in Flame Amber.</p>
+
+    <div class="wayfinding-grid" style="margin-bottom: 48px;">
+
+      <!-- Primary directional sign -->
+      <div class="sign">
+        <div class="sign-header">
+          <div class="sign-header-text">Ascent Together 2026 · North Carolina Convention Center</div>
+        </div>
+        <div class="sign-body">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.06);">
+              <div>
+                <div class="sign-room">MAIN STAGE</div>
+                <div class="sign-event">Keynote · Opening Session<br>General Assembly</div>
+              </div>
+              <div class="sign-arrow" style="margin-top: 0; flex-direction: column; align-items: flex-end; gap: 4px;">
+                <div class="arrow-head" style="font-size: 24px;">↑</div>
+                <div style="font-family: var(--font-headline); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--flame-amber);">Straight Ahead</div>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.06);">
+              <div>
+                <div class="sign-room" style="font-size: 22px;">BREAKOUT A</div>
+                <div class="sign-event">Brand Strategy Workshop<br>Room 114</div>
+              </div>
+              <div style="text-align: right;">
+                <div class="arrow-head" style="font-size: 24px; color: var(--flame-amber);">→</div>
+                <div style="font-family: var(--font-headline); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.3);">Turn Right</div>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <div class="sign-room" style="font-size: 22px;">REGISTRATION</div>
+                <div class="sign-event">Badge Pick-Up · Help Desk</div>
+              </div>
+              <div style="text-align: right;">
+                <div class="arrow-head" style="font-size: 24px; color: var(--flame-amber);">←</div>
+                <div style="font-family: var(--font-headline); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.3);">Turn Left</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room ID sign -->
+      <div class="sign">
+        <div class="sign-header">
+          <div class="sign-header-text">Ascent Together 2026</div>
+        </div>
+        <div class="sign-body" style="align-items: center; justify-content: center; text-align: center; gap: 8px;">
+          <div>
+            <div style="font-family: var(--font-display); font-size: 52px; line-height: 1; color: white; letter-spacing: 0.03em; margin-bottom: 8px;">ROOM A</div>
+            <div style="height: 3px; background: linear-gradient(90deg, var(--flame-gold), var(--flame-red)); border-radius: 2px; margin-bottom: 12px;"></div>
+            <div style="font-family: var(--font-headline); font-weight: 700; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.5);">Brand Strategy</div>
+            <div style="font-family: var(--font-body); font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.3); margin-top: 4px;">Cap: 120 · Breakout</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Schedule totem sign -->
+      <div class="sign">
+        <div class="sign-header" style="background: linear-gradient(90deg, #A01E04, #D94F12);">
+          <div class="sign-header-text">Today's Schedule</div>
+        </div>
+        <div class="sign-body" style="gap: 0;">
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="display: flex; align-items: flex-start; gap: 12px;">
+              <div style="font-family: var(--font-headline); font-weight: 800; font-size: 12px; color: var(--flame-amber); min-width: 44px;">9:00</div>
+              <div style="font-family: var(--font-body); font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.5;">Opening Keynote<br><span style="opacity: 0.5;">Main Stage</span></div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 12px;">
+              <div style="font-family: var(--font-headline); font-weight: 800; font-size: 12px; color: var(--flame-amber); min-width: 44px;">11:00</div>
+              <div style="font-family: var(--font-body); font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.5;">Brand Breakouts<br><span style="opacity: 0.5;">Rooms A–D</span></div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 12px;">
+              <div style="font-family: var(--font-headline); font-weight: 800; font-size: 12px; color: var(--flame-amber); min-width: 44px;">12:30</div>
+              <div style="font-family: var(--font-body); font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.5;">Lunch & Networking<br><span style="opacity: 0.5;">Grand Ballroom</span></div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 12px;">
+              <div style="font-family: var(--font-headline); font-weight: 800; font-size: 12px; color: var(--flame-amber); min-width: 44px;">2:00</div>
+              <div style="font-family: var(--font-body); font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.5;">Strategy Sessions<br><span style="opacity: 0.5;">Rooms A–D</span></div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 12px;">
+              <div style="font-family: var(--font-headline); font-weight: 800; font-size: 12px; color: var(--flame-amber); min-width: 44px;">6:00</div>
+              <div style="font-family: var(--font-body); font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.5;">Awards Dinner<br><span style="opacity: 0.5;">Grand Ballroom</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Wide banner horizontal -->
+    <div class="section-number" style="margin-bottom: 16px;">Registration Banner / Step-and-Repeat</div>
+    <div class="wide-screen" style="margin-bottom: 48px; aspect-ratio: 16/3.5;">
+      <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 800 175" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="wbg1" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#0D0D0D"/>
+            <stop offset="40%" stop-color="#1A1A1A"/>
+            <stop offset="100%" stop-color="#0D0D0D"/>
+          </linearGradient>
+          <linearGradient id="wg1" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#F5A623"/>
+            <stop offset="100%" stop-color="#A01E04"/>
+          </linearGradient>
+          <radialGradient id="wglow" cx="50%" cy="50%" r="40%">
+            <stop offset="0%" stop-color="#E8751A" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#111" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="800" height="175" fill="url(#wbg1)"/>
+        <rect width="800" height="175" fill="url(#wglow)"/>
+        <!-- Chevron left -->
+        <path d="M80 10 L130 87 L30 87 Z" fill="url(#wg1)" opacity="0.7"/>
+        <!-- Chevron right -->
+        <path d="M720 10 L770 87 L670 87 Z" fill="url(#wg1)" opacity="0.7"/>
+        <!-- Bottom gradient bar -->
+        <rect x="0" y="160" width="800" height="4" fill="url(#wg1)"/>
+        <!-- Title -->
+        <text x="400" y="80" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="52" fill="url(#wg1)">ASCENT TOGETHER</text>
+        <text x="400" y="115" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="13" letter-spacing="6" fill="rgba(255,255,255,0.45)">OUR BRANDS. ONE FUTURE. · 2026</text>
+        <text x="400" y="148" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="500" font-size="10" letter-spacing="3" fill="rgba(255,255,255,0.22)">NORTH CAROLINA · ASCENT HOSPITALITY MANAGEMENT</text>
+      </svg>
+    </div>
+
+    <div class="three-col">
+      <div class="rule-card">
+        <div class="rule-card-title">Sign Types</div>
+        <div class="rule-card-body">Primary directional totems (freestanding, double-sided, 24"×60"), Room ID signs (mounted, 18"×24"), Schedule boards (rolling or fixed, 24"×36"), Registration banner (8'×2.5'), Step-and-repeat (8'×8' or 10'×8').</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card-title">Materials</div>
+        <div class="rule-card-body">Foam board or Sintra for interior. Aluminum composite (Dibond) for permanent or high-traffic. Matte laminate throughout. No gloss finish — it creates glare on screens and photography. Flame gradient header always printed as spot process.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card-title">Wayfinding Language</div>
+        <div class="rule-card-body">Room names are short and bold: MAIN STAGE, BREAKOUT A–D, REGISTRATION, HOSPITALITY, AWARDS HALL. Never use just numbers. Session names appear in smaller body weight below. Directional language: always "→ Turn Right," not "East" or abstract descriptors.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+<!-- ════════════════ 10 DIGITAL SCREENS ════════════════ -->
+<section style="background: #141414;">
+  <div class="section-block">
+    <div class="section-number">Section 10</div>
+    <div class="section-title">Digital <span>Screens</span></div>
+    <p class="section-intro">Digital touchpoints span lobby displays, mobile event app UI, social countdown graphics, and real-time recognition screens. Animated loops carry the energy of the hero lock into motion.</p>
+
+    <div class="digital-screens-row" style="justify-content: flex-start; flex-wrap: wrap; gap: 24px;">
+
+      <!-- Vertical lobby screen -->
+      <div class="digital-screen" style="max-width: 180px;">
+        <svg style="width:100%;height:100%;display:block;" viewBox="0 0 180 320" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="ds1g" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#F5A623"/>
+              <stop offset="100%" stop-color="#A01E04"/>
+            </linearGradient>
+            <radialGradient id="ds1glow" cx="50%" cy="40%" r="50%">
+              <stop offset="0%" stop-color="#E8751A" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#0A0A0A" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="180" height="320" fill="#0A0A0A"/>
+          <rect width="180" height="320" fill="url(#ds1glow)"/>
+          <path d="M90 20 L160 140 L20 140 Z" fill="url(#ds1g)" opacity="0.85"/>
+          <path d="M90 40 L148 140 L32 140 Z" fill="none" stroke="white" stroke-width="1" opacity="0.15"/>
+          <text x="90" y="190" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="30" fill="url(#ds1g)">ASCENT</text>
+          <text x="90" y="222" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="30" fill="white">TOGETHER</text>
+          <rect x="45" y="232" width="90" height="2" rx="1" fill="url(#ds1g)" opacity="0.5"/>
+          <text x="90" y="256" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="9" font-weight="700" letter-spacing="3" fill="rgba(255,255,255,0.4)">OUR BRANDS</text>
+          <text x="90" y="270" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="9" font-weight="700" letter-spacing="3" fill="rgba(255,255,255,0.4)">ONE FUTURE</text>
+          <text x="90" y="300" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="22" fill="#C0320A" opacity="0.8">2026</text>
+        </svg>
+        <div style="text-align:center; padding: 8px 0; font-family: var(--font-body); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.25);">Lobby Totem</div>
+      </div>
+
+      <!-- Square social -->
+      <div style="border-radius: 12px; overflow: hidden; width: 240px; flex-shrink: 0;">
+        <svg style="width:100%;display:block;" viewBox="0 0 240 240" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="sq1g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#F5A623"/>
+              <stop offset="100%" stop-color="#A01E04"/>
+            </linearGradient>
+          </defs>
+          <rect width="240" height="240" fill="url(#sq1g)"/>
+          <path d="M120 10 L220 200 L20 200 Z" fill="white" opacity="0.1"/>
+          <path d="M120 30 L200 200 L40 200 Z" fill="white" opacity="0.05"/>
+          <text x="120" y="108" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="42" fill="white" opacity="0.95">ASCENT</text>
+          <text x="120" y="150" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="42" fill="white" opacity="0.95">TOGETHER</text>
+          <text x="120" y="175" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="10" letter-spacing="4" fill="rgba(255,255,255,0.6)">OUR BRANDS. ONE FUTURE.</text>
+          <text x="120" y="215" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="32" fill="rgba(255,255,255,0.8)">2026</text>
+        </svg>
+        <div style="text-align:center; padding: 8px 0; font-family: var(--font-body); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.25);">Social / App Header</div>
+      </div>
+
+      <!-- Wide screen loop -->
+      <div style="flex: 1; min-width: 280px;">
+        <div style="border-radius: 12px; overflow: hidden; margin-bottom: 16px;">
+          <svg style="width:100%;display:block;" viewBox="0 0 480 135" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="ws1g" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#F5A623"/>
+                <stop offset="100%" stop-color="#A01E04"/>
+              </linearGradient>
+              <radialGradient id="ws1r" cx="30%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#E8751A" stop-opacity="0.2"/>
+                <stop offset="100%" stop-color="#111" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="480" height="135" fill="#111"/>
+            <rect width="480" height="135" fill="url(#ws1r)"/>
+            <path d="M60 5 L96 68 L24 68 Z" fill="url(#ws1g)" opacity="0.7"/>
+            <rect x="0" y="126" width="480" height="3" fill="url(#ws1g)"/>
+            <text x="120" y="58" font-family="'Bebas Neue',sans-serif" font-size="36" fill="url(#ws1g)">ASCENT TOGETHER</text>
+            <text x="120" y="85" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="11" letter-spacing="4" fill="rgba(255,255,255,0.4)">WELCOME TO NORTH CAROLINA · 2026</text>
+            <text x="120" y="108" font-family="'Barlow Condensed',sans-serif" font-weight="400" font-size="11" fill="rgba(255,255,255,0.25)">Huddle House × Perkins — Ascent Hospitality Management</text>
+          </svg>
+        </div>
+        <div style="text-align:left; font-family: var(--font-body); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.25);">Wide LED Ticker / Welcome Loop</div>
+      </div>
+
+    </div>
+
+    <div class="three-col">
+      <div class="rule-card">
+        <div class="rule-card-title">Loop Animation</div>
+        <div class="rule-card-body">Ambient loops: 15s or 30s. Gradient sweeps from Flame Gold to Flame Deep, slow and breathing. Chevron pulses subtly at 0.5 opacity. No hard cuts — all transitions are slow fades or wipes. Speaker slides use a 5s hold then slow pan-up.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card-title">Recognition Screens</div>
+        <div class="rule-card-body">Awards and franchise milestone recognition use the full-flame background with the attendee's name in Bebas Neue Display at maximum scale. Brand logo of their franchise floats above. High-drama, cinematic moment. Print still versions for the awards dinner program.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card-title">Spec Formats</div>
+        <div class="rule-card-body">Lobby totem: 1080×1920px. Main stage center: 1920×1080 (16:9). Side panels: 1080×1920. Ticker: 1920×280. Social: 1080×1080 and 1080×1920 Stories. All at 72dpi minimum; stage content at 120dpi minimum.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+<!-- ════════════════ 11 MERCH ════════════════ -->
+<section class="bg-dark">
+  <div class="section-block">
+    <div class="section-number">Section 11</div>
+    <div class="section-title">Merch &amp; <span>Swag Direction</span></div>
+    <p class="section-intro">Convention merch should feel like something attendees actually want to keep. Premium quality, restrained graphic approach, and brand-forward execution. Not every item needs the full hero lock — some are strongest with just the chevron mark or the tagline.</p>
+
+    <div class="merch-grid">
+
+      <!-- Tote bag -->
+      <div class="merch-card">
+        <div class="merch-visual">
+          <svg style="width:100%;height:100%;" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+            <rect width="200" height="200" fill="#1A1A1A"/>
+            <!-- Bag shape -->
+            <rect x="40" y="80" width="120" height="110" rx="4" fill="#252525" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <!-- Handles -->
+            <path d="M70 80 Q70 50 90 50 Q110 50 130 80" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="6" stroke-linecap="round"/>
+            <!-- Logo area on bag -->
+            <defs>
+              <linearGradient id="tg1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#F5A623"/>
+                <stop offset="100%" stop-color="#D94F12"/>
+              </linearGradient>
+            </defs>
+            <polygon points="100,100 116,124 84,124" fill="url(#tg1)"/>
+            <text x="100" y="145" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="13" fill="white" opacity="0.85" letter-spacing="1">ASCENT</text>
+            <text x="100" y="159" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="13" fill="white" opacity="0.6" letter-spacing="1">TOGETHER</text>
+            <rect x="60" y="164" width="80" height="1.5" fill="url(#tg1)" opacity="0.5"/>
+            <text x="100" y="177" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="600" font-size="7" letter-spacing="2" fill="rgba(255,255,255,0.3)">2026</text>
+          </svg>
+        </div>
+        <div class="merch-title">Premium Canvas Tote<br>Charcoal · Gradient Print</div>
+      </div>
+
+      <!-- Hoodie -->
+      <div class="merch-card">
+        <div class="merch-visual">
+          <svg style="width:100%;height:100%;" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+            <rect width="200" height="200" fill="#1A1A1A"/>
+            <!-- Hood shape -->
+            <path d="M60 60 Q60 30 100 25 Q140 30 140 60 L155 160 L45 160 Z" fill="#252525" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+            <!-- Pocket -->
+            <rect x="70" y="130" width="60" height="25" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <!-- Chevron on chest -->
+            <defs>
+              <linearGradient id="hg1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#F5A623"/>
+                <stop offset="100%" stop-color="#C0320A"/>
+              </linearGradient>
+            </defs>
+            <polygon points="100,78 118,108 82,108" fill="url(#hg1)"/>
+            <text x="100" y="126" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="9" letter-spacing="2" fill="rgba(255,255,255,0.4)">ASCENT TOGETHER</text>
+          </svg>
+        </div>
+        <div class="merch-title">Midweight Hoodie<br>Charcoal · Left Chest Print</div>
+      </div>
+
+      <!-- Hat -->
+      <div class="merch-card">
+        <div class="merch-visual">
+          <svg style="width:100%;height:100%;" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+            <rect width="200" height="200" fill="#1A1A1A"/>
+            <!-- Cap shape -->
+            <path d="M40 110 Q40 70 100 65 Q160 70 160 110 L155 130 L45 130 Z" fill="#2D2D2D" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <!-- Brim -->
+            <path d="M40 120 Q50 145 80 145 L120 145 Q150 145 160 120" fill="#252525" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <!-- Crown seam -->
+            <line x1="100" y1="65" x2="100" y2="130" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <!-- Front patch / embroidery area -->
+            <defs>
+              <linearGradient id="cap1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#F5A623"/>
+                <stop offset="100%" stop-color="#D94F12"/>
+              </linearGradient>
+            </defs>
+            <polygon points="100,82 112,100 88,100" fill="url(#cap1)"/>
+            <text x="100" y="116" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" letter-spacing="1">2026</text>
+            <!-- Brim tab -->
+            <rect x="86" y="144" width="28" height="4" rx="2" fill="url(#cap1)" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="merch-title">Structured 6-Panel Cap<br>Charcoal · Embroidered Patch</div>
+      </div>
+
+      <!-- Notebook -->
+      <div class="merch-card">
+        <div class="merch-visual">
+          <svg style="width:100%;height:100%;" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+            <rect width="200" height="200" fill="#1A1A1A"/>
+            <!-- Notebook shape -->
+            <rect x="50" y="35" width="105" height="135" rx="4" fill="#F2ECE4"/>
+            <!-- Spine -->
+            <rect x="50" y="35" width="12" height="135" rx="4" fill="#E8E0D4"/>
+            <!-- Spine binding lines -->
+            <line x1="56" y1="50" x2="56" y2="155" stroke="rgba(0,0,0,0.08)" stroke-width="1" stroke-dasharray="4,4"/>
+            <!-- Cover design -->
+            <defs>
+              <linearGradient id="nb1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#F5A623"/>
+                <stop offset="100%" stop-color="#A01E04"/>
+              </linearGradient>
+            </defs>
+            <rect x="62" y="35" width="93" height="5" fill="url(#nb1)"/>
+            <polygon points="108,65 122,90 94,90" fill="url(#nb1)" opacity="0.8"/>
+            <text x="108" y="110" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="15" fill="#1A1A1A" opacity="0.85" letter-spacing="1">ASCENT</text>
+            <text x="108" y="126" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="15" fill="#1A1A1A" opacity="0.6" letter-spacing="1">TOGETHER</text>
+            <rect x="80" y="132" width="56" height="1.5" fill="url(#nb1)" opacity="0.5"/>
+            <text x="108" y="148" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="8" letter-spacing="2" fill="rgba(0,0,0,0.3)">2026</text>
+          </svg>
+        </div>
+        <div class="merch-title">Hardcover Notebook A5<br>Cream · Foil Gradient Spine</div>
+      </div>
+
+      <!-- Tumbler -->
+      <div class="merch-card">
+        <div class="merch-visual">
+          <svg style="width:100%;height:100%;" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+            <rect width="200" height="200" fill="#1A1A1A"/>
+            <!-- Tumbler body -->
+            <path d="M80 30 Q75 100 75 160 Q100 170 125 160 Q125 100 120 30 Z" fill="#2D2D2D" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+            <!-- Lid -->
+            <rect x="78" y="22" width="44" height="12" rx="4" fill="#3A3A3A"/>
+            <!-- Gradient wrap -->
+            <defs>
+              <linearGradient id="tumb1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#F5A623" stop-opacity="0.8"/>
+                <stop offset="100%" stop-color="#A01E04" stop-opacity="0.8"/>
+              </linearGradient>
+              <clipPath id="tumbclip">
+                <path d="M80 30 Q75 100 75 160 Q100 170 125 160 Q125 100 120 30 Z"/>
+              </clipPath>
+            </defs>
+            <rect x="75" y="80" width="50" height="50" fill="url(#tumb1)" clip-path="url(#tumbclip)"/>
+            <text x="100" y="100" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="10" fill="white" opacity="0.85" letter-spacing="1">ASCENT</text>
+            <text x="100" y="113" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="10" fill="white" opacity="0.65" letter-spacing="1">2026</text>
+          </svg>
+        </div>
+        <div class="merch-title">30oz Insulated Tumbler<br>Charcoal · Gradient Wrap</div>
+      </div>
+
+      <!-- Pin set -->
+      <div class="merch-card">
+        <div class="merch-visual">
+          <svg style="width:100%;height:100%;" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+            <rect width="200" height="200" fill="#1A1A1A"/>
+            <!-- Three pins -->
+            <defs>
+              <linearGradient id="pin1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#F5A623"/>
+                <stop offset="100%" stop-color="#D94F12"/>
+              </linearGradient>
+            </defs>
+            <!-- Pin 1: Chevron -->
+            <circle cx="68" cy="95" r="28" fill="#2D2D2D" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+            <polygon points="68,76 82,100 54,100" fill="url(#pin1)"/>
+            <!-- Pin 2: Wordmark -->
+            <circle cx="132" cy="80" r="22" fill="url(#pin1)"/>
+            <text x="132" y="84" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="11" fill="white" letter-spacing="1">AT26</text>
+            <!-- Pin 3: Tagline -->
+            <circle cx="110" cy="130" r="20" fill="#2D2D2D" stroke="rgba(245,166,35,0.4)" stroke-width="2"/>
+            <text x="110" y="126" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="7" letter-spacing="1" fill="#F5A623">OUR</text>
+            <text x="110" y="135" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="7" letter-spacing="1" fill="#F5A623">BRANDS</text>
+            <text x="110" y="144" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="7" letter-spacing="1" fill="rgba(255,255,255,0.4)">ONE FUTURE</text>
+          </svg>
+        </div>
+        <div class="merch-title">Enamel Pin Set (3)<br>Hard Enamel · Gold Fill</div>
+      </div>
+
+    </div>
+
+    <div class="three-col">
+      <div class="rule-card">
+        <div class="rule-card-title">Garment Spec</div>
+        <div class="rule-card-body">Primary colorway: Charcoal (#1A1A1A equivalent). Secondary: Cream/Natural. All graphic application by screen print (1–3 color) or direct-to-garment for complex gradient elements. Embroidery for caps and lapels.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card-title">Production Notes</div>
+        <div class="rule-card-body">Gradient prints require pantone-matched spot inks in sequence. Minimum order: 50 units per style for cost efficiency. Notebooks: debossed cover with foil-stamped spine band. Tumblers: laser-engrave or wraparound shrink-sleeve print.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card-title">Distribution Tiers</div>
+        <div class="rule-card-body">All-attendee: tote, notebook, pin. Leadership: add hoodie or quarter-zip, premium tumbler. Speaker/Executive: full kit in branded box, plus a numbered enamel pin. On-site gifting in Ascent-branded kraft tissue wrap.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+<!-- ════════════════ 12 PRINT COLLATERAL ════════════════ -->
+<section style="background: #141414;">
+  <div class="section-block">
+    <div class="section-number">Section 12</div>
+    <div class="section-title">Print Collateral &amp; <span>Communications</span></div>
+    <p class="section-intro">Internal comms, save-the-dates, printed programs, and awards materials must feel connected to the visual system without being over-branded. The system allows for light-background warmth in print while maintaining dark-first energy in digital.</p>
+
+    <div class="app-grid" style="margin-bottom: 48px;">
+
+      <!-- Save the date -->
+      <div class="app-card" style="background: #111;">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 580 320" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="std1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#F5A623"/>
+              <stop offset="100%" stop-color="#A01E04"/>
+            </linearGradient>
+            <radialGradient id="std1r" cx="80%" cy="20%" r="50%">
+              <stop offset="0%" stop-color="#E8751A" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#0D0D0D" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="580" height="320" fill="#0D0D0D"/>
+          <rect width="580" height="320" fill="url(#std1r)"/>
+          <!-- Chevron crop top right -->
+          <path d="M480 -60 L640 200 L640 -60 Z" fill="url(#std1)" opacity="0.12"/>
+          <!-- Left accent bar -->
+          <rect x="0" y="0" width="5" height="320" fill="url(#std1)"/>
+          <text x="40" y="80" font-family="'Barlow Condensed',sans-serif" font-weight="600" font-size="10" fill="#E8751A" letter-spacing="4">SAVE THE DATE</text>
+          <text x="40" y="145" font-family="'Bebas Neue',sans-serif" font-size="64" fill="url(#std1)">ASCENT</text>
+          <text x="40" y="200" font-family="'Bebas Neue',sans-serif" font-size="64" fill="white" opacity="0.9">TOGETHER</text>
+          <rect x="40" y="215" width="200" height="2" fill="url(#std1)" opacity="0.5"/>
+          <text x="40" y="244" font-family="'Barlow Condensed',sans-serif" font-weight="400" font-size="13" fill="rgba(255,255,255,0.5)" letter-spacing="2">NORTH CAROLINA · 2026</text>
+          <text x="40" y="265" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="16" fill="rgba(255,255,255,0.8)" letter-spacing="1">DATE · VENUE NAME TBD</text>
+          <text x="40" y="295" font-family="'Barlow',sans-serif" font-size="10" font-weight="300" fill="rgba(255,255,255,0.3)" letter-spacing="1">Formal invitation to follow · Ascent Hospitality Management</text>
+        </svg>
+        <div class="app-card-inner" style="position:relative; padding: 20px 24px 12px;">
+          <div class="app-card-eyebrow">Save the Date Card — 5"×7" Flat</div>
+        </div>
+      </div>
+
+      <!-- Program cover -->
+      <div class="app-card" style="background: #F2ECE4;">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 580 320" preserveAspectRatio="xMidYMid slice">
+          <rect width="580" height="320" fill="#F2ECE4"/>
+          <!-- Cream texture chevron bg -->
+          <path d="M290 -80 L520 320 L60 320 Z" fill="#E8E0D4" opacity="0.7"/>
+          <!-- Top gradient bar -->
+          <defs>
+            <linearGradient id="prog1" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#F5A623"/>
+              <stop offset="100%" stop-color="#A01E04"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="580" height="7" fill="url(#prog1)"/>
+          <!-- Chevron mark -->
+          <polygon points="72,50 96,90 48,90" fill="url(#prog1)" opacity="0.85"/>
+          <text x="48" y="130" font-family="'Bebas Neue',sans-serif" font-size="52" fill="#1A1A1A" opacity="0.85">ASCENT TOGETHER</text>
+          <text x="48" y="165" font-family="'Barlow Condensed',sans-serif" font-weight="600" font-size="12" fill="#D94F12" letter-spacing="4">OUR BRANDS. ONE FUTURE.</text>
+          <rect x="48" y="178" width="150" height="2" rx="1" fill="url(#prog1)" opacity="0.4"/>
+          <text x="48" y="205" font-family="'Barlow Condensed',sans-serif" font-weight="400" font-size="13" fill="rgba(26,26,26,0.5)" letter-spacing="2">NORTH CAROLINA · 2026</text>
+          <text x="48" y="260" font-family="'Bebas Neue',sans-serif" font-size="18" fill="#1A1A1A" opacity="0.3">OFFICIAL PROGRAM</text>
+          <!-- Bottom gradient bar -->
+          <rect x="0" y="313" width="580" height="7" fill="url(#prog1)"/>
+        </svg>
+        <div class="app-card-inner" style="padding: 20px 24px 12px;">
+          <div class="app-card-eyebrow" style="color: rgba(0,0,0,0.4);">Official Program Cover — 8.5"×11" Saddle-Stitched</div>
+        </div>
+      </div>
+
+      <!-- Email banner -->
+      <div class="app-card" style="background: #111; min-height: 200px;">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 580 200" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="em1" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#F5A623"/>
+              <stop offset="100%" stop-color="#A01E04"/>
+            </linearGradient>
+            <radialGradient id="em1r" cx="20%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#E8751A" stop-opacity="0.12"/>
+              <stop offset="100%" stop-color="#111" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="580" height="200" fill="#111"/>
+          <rect width="580" height="200" fill="url(#em1r)"/>
+          <rect x="0" y="192" width="580" height="4" fill="url(#em1)"/>
+          <polygon points="40,30 56,58 24,58" fill="url(#em1)" opacity="0.7"/>
+          <text x="75" y="55" font-family="'Bebas Neue',sans-serif" font-size="36" fill="url(#em1)">ASCENT TOGETHER 2026</text>
+          <text x="75" y="82" font-family="'Barlow Condensed',sans-serif" font-weight="600" font-size="11" letter-spacing="4" fill="rgba(255,255,255,0.35)">ASCENT HOSPITALITY MANAGEMENT · NORTH CAROLINA</text>
+          <rect x="75" y="100" width="400" height="1" fill="rgba(255,255,255,0.06)"/>
+          <text x="75" y="128" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="18" fill="white" opacity="0.85">Subject Line / Headline Goes Here</text>
+          <text x="75" y="155" font-family="'Barlow',sans-serif" font-size="12" font-weight="300" fill="rgba(255,255,255,0.4)" style="line-height:1.6">Preview of email body copy in regular weight. This is the supporting</text>
+          <text x="75" y="171" font-family="'Barlow',sans-serif" font-size="12" font-weight="300" fill="rgba(255,255,255,0.4)">message content and it flows in the body zone below the headline.</text>
+        </svg>
+        <div class="app-card-inner" style="padding: 20px 24px 12px;">
+          <div class="app-card-eyebrow">Email Template Header — 600px wide</div>
+        </div>
+      </div>
+
+      <!-- Award certificate -->
+      <div class="app-card" style="background: #F2ECE4; min-height: 200px;">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 580 200" preserveAspectRatio="xMidYMid slice">
+          <rect width="580" height="200" fill="#FAF7F4"/>
+          <defs>
+            <linearGradient id="cert1" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#F5A623"/>
+              <stop offset="100%" stop-color="#A01E04"/>
+            </linearGradient>
+          </defs>
+          <!-- Border frame -->
+          <rect x="8" y="8" width="564" height="184" rx="4" fill="none" stroke="url(#cert1)" stroke-width="2"/>
+          <rect x="14" y="14" width="552" height="172" rx="3" fill="none" stroke="#E8E0D4" stroke-width="1"/>
+          <!-- Chevron mark -->
+          <polygon points="48,40 60,62 36,62" fill="url(#cert1)" opacity="0.75"/>
+          <!-- Content -->
+          <text x="290" y="60" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="600" font-size="10" fill="#C0320A" letter-spacing="5">ASCENT TOGETHER 2026 · AWARD OF EXCELLENCE</text>
+          <text x="290" y="100" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="32" fill="#1A1A1A" opacity="0.85">FRANCHISEE OF THE YEAR</text>
+          <rect x="200" y="110" width="180" height="2" rx="1" fill="url(#cert1)" opacity="0.4"/>
+          <text x="290" y="138" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="400" font-size="13" fill="rgba(26,26,26,0.5)" letter-spacing="1">Presented to: RECIPIENT NAME · FRANCHISE LOCATION</text>
+          <text x="290" y="170" text-anchor="middle" font-family="'Barlow',sans-serif" font-size="10" font-weight="300" fill="rgba(26,26,26,0.3)" letter-spacing="1" font-style="italic">In recognition of outstanding brand stewardship and operational excellence</text>
+        </svg>
+        <div class="app-card-inner" style="padding: 20px 24px 12px;">
+          <div class="app-card-eyebrow" style="color: rgba(0,0,0,0.4);">Award Certificate — 11"×8.5" Landscape · Foil Available</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="three-col">
+      <div class="rule-card">
+        <div class="rule-card-title">Print Finishes</div>
+        <div class="rule-card-body">Gradient elements: spot UV or foil stamp on premium applications (certificates, speaker gifts, program covers). Body text: uncoated matte stock throughout. Never gloss-coat the full print — it creates cheap visual weight. Silk or satin finish where a sheen is needed.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card-title">Email System</div>
+        <div class="rule-card-body">Header always dark, 600px wide. Body zone can be light or dark, consistent per campaign. Footer: charcoal with Ascent lock at 40% opacity. All communications use Barlow as web-safe system font fallback. Line height: 1.7 on body copy for readability.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card-title">Internal Comms</div>
+        <div class="rule-card-body">Internal memos, recap decks, and post-event reports use the Light PowerPoint template. Headers carry the flame gradient accent bar. Branded footer on all pages. No external brand coloring in operational documents — reserve the full visual system for public-facing materials.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer class="doc-footer">
+  <div style="max-width: 640px; margin: 0 auto;">
+    <div style="display: inline-flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+      <svg width="28" height="22" viewBox="0 0 40 30">
+        <defs><linearGradient id="ftrchev" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F5A623"/><stop offset="100%" stop-color="#A01E04"/></linearGradient></defs>
+        <polygon points="20,2 38,28 2,28" fill="url(#ftrchev)"/>
+      </svg>
+      <div class="footer-logo-text">ASCENT TOGETHER 2026</div>
+    </div>
+    <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); margin-bottom: 24px;"></div>
+    <p style="font-family: var(--font-body); font-size: 13px; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.3); max-width: 520px; margin: 0 auto 16px;">This document constitutes the official brand system for the Ascent Together 2026 convention identity. All applications must be reviewed and approved by the Ascent Creative Department before production. Questions: contact the Creative team via internal channels.</p>
+    <div class="footer-meta">Ascent Hospitality Management · Creative Department · Version 1.0 · Confidential Internal Use</div>
+    <div class="footer-meta" style="margin-top: 8px;">Huddle House × Perkins Restaurant &amp; Bakery · Our Brands. One Future.</div>
+  </div>
+</footer>
+
+</body>
+</html>
