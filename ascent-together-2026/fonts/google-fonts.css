@@ -1,0 +1,14 @@
+/*
+ * Ascent Together 2026 — Local Font Stub
+ *
+ * This file is a placeholder. Replace it with the fully self-hosted
+ * font files by running download-assets.sh, which will:
+ *   1. Download the Google Fonts CSS
+ *   2. Download all .woff2 font files referenced by it
+ *   3. Rewrite this file with local @font-face declarations
+ *
+ * Until then this file imports from Google Fonts so the page
+ * renders correctly in any environment with internet access.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;1,300&display=swap');
