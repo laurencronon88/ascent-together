@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ascent Hospitality Management — Rooted & Rising</title>
+
+<!-- Typography: Freight Display Pro feel via Playfair Display + refined sans via DM Sans -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════
+   DESIGN TOKENS
+   ═══════════════════════════════════════════════════════ */
+:root {
+  /* Palette — warm, grounded, premium */
+  --black: #131110;
+  --charcoal: #1c1917;
+  --dark: #292524;
+  --stone: #44403c;
+  --warm-gray: #78716c;
+  --sand: #a8a29e;
+  --cream: #f5f0ea;
+  --ivory: #faf8f5;
+  --white: #fffdf9;
+  --copper: #c2855a;
+  --copper-light: #d4a574;
+  --forest: #2d4a3e;
+  --forest-light: #3d6b5a;
+
+  /* Type scale — editorial, generous */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing — 8px base grid */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+  --space-2xl: 8rem;
+  --space-3xl: 12rem;
+
+  /* Layout */
+  --max-width: 1440px;
+  --gutter: clamp(1.5rem, 4vw, 4rem);
+  --column: calc((100% - var(--gutter) * 11) / 12);
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESET + BASE
+   ═══════════════════════════════════════════════════════ */
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--charcoal);
+  background: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ═══════════════════════════════════════════════════════
+   UTILITY
+   ═══════════════════════════════════════════════════════ */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+
+.section-pad {
+  padding: var(--space-3xl) 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════════════════ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.5rem var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.4s ease, padding 0.4s ease;
+}
+
+.nav.scrolled {
+  background: rgba(19, 17, 16, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 1rem var(--gutter);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+.nav-wordmark {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 253, 249, 0.7);
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--copper-light);
+}
+
+.nav-cta {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white) !important;
+  border: 1px solid rgba(255,253,249,0.3);
+  padding: 0.6rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.nav-cta:hover {
+  background: var(--copper);
+  border-color: var(--copper);
+}
+
+/* ═══════════════════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 var(--gutter) var(--space-xl);
+  background: var(--black);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  /* Warm, cinematic gradient simulating a diner interior at golden hour */
+  background:
+    linear-gradient(180deg,
+      rgba(19,17,16,0.3) 0%,
+      rgba(19,17,16,0.1) 40%,
+      rgba(19,17,16,0.7) 80%,
+      rgba(19,17,16,0.95) 100%
+    ),
+    linear-gradient(135deg,
+      #3d2b1f 0%,
+      #5c3d2e 25%,
+      #2d4a3e 50%,
+      #1c1917 75%,
+      #131110 100%
+    );
+}
+
+/* Simulated photography overlay — warm grain */
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  background-size: 256px;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--copper-light);
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.4s forwards;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--white);
+  max-width: 14ch;
+  letter-spacing: -0.02em;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.6s forwards;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--copper-light);
+}
+
+.hero-sub {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255,253,249,0.6);
+  max-width: 42ch;
+  margin-top: 2rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.9s forwards;
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  right: var(--gutter);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 1.2s forwards;
+}
+
+.hero-scroll-indicator span {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,253,249,0.35);
+  writing-mode: vertical-rl;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--copper-light), transparent);
+  animation: scrollPulse 2s ease infinite;
+}
+
+/* ═══════════════════════════════════════════════════════
+   BRAND STATEMENT
+   ═══════════════════════════════════════════════════════ */
+.brand-statement {
+  padding: var(--space-3xl) var(--gutter);
+  background: var(--white);
+}
+
+.brand-statement-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.brand-statement-left {
+  padding-top: 0.5rem;
+}
+
+.brand-statement h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--charcoal);
+  letter-spacing: -0.01em;
+}
+
+.brand-statement h2 em {
+  font-style: italic;
+  color: var(--copper);
+}
+
+.brand-statement-right {
+  padding-top: 1rem;
+}
+
+.brand-statement-right p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--stone);
+  max-width: 48ch;
+}
+
+.brand-statement-right p + p {
+  margin-top: 1.5rem;
+}
+
+.divider {
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--copper);
+  margin: 2rem 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   OUR BRANDS
+   ═══════════════════════════════════════════════════════ */
+.brands {
+  background: var(--charcoal);
+  padding: var(--space-3xl) 0;
+  overflow: hidden;
+}
+
+.brands-header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  margin-bottom: var(--space-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.brands-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.15;
+}
+
+.brands-header p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: rgba(255,253,249,0.5);
+  max-width: 32ch;
+  text-align: right;
+  line-height: 1.6;
+}
+
+.brand-cards {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.brand-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+  group: true;
+}
+
+.brand-card-bg {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand-card:hover .brand-card-bg {
+  transform: scale(1.04);
+}
+
+/* Perkins — warm greens and baked warmth */
+.brand-card--perkins .brand-card-bg {
+  background:
+    linear-gradient(160deg,
+      rgba(45,74,62,0.9) 0%,
+      rgba(61,107,90,0.85) 40%,
+      rgba(92,61,46,0.7) 100%
+    ),
+    linear-gradient(to bottom right, #2d4a3e, #5c3d2e);
+}
+
+/* Huddle House — warm amber, diner energy */
+.brand-card--huddle .brand-card-bg {
+  background:
+    linear-gradient(160deg,
+      rgba(194,133,90,0.85) 0%,
+      rgba(156,98,60,0.8) 40%,
+      rgba(44,40,36,0.9) 100%
+    ),
+    linear-gradient(to bottom right, #c2855a, #2c2824);
+}
+
+.brand-card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5rem;
+}
+
+.brand-card-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,253,249,0.5);
+}
+
+.brand-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.brand-card h3 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.1;
+}
+
+.brand-card-tagline {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: rgba(255,253,249,0.6);
+  margin-top: 0.5rem;
+  max-width: 28ch;
+}
+
+.brand-card-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,253,249,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.brand-card:hover .brand-card-arrow {
+  background: var(--white);
+  border-color: var(--white);
+}
+
+.brand-card:hover .brand-card-arrow svg path {
+  stroke: var(--charcoal);
+}
+
+.brand-card-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.brand-card-arrow svg path {
+  stroke: rgba(255,253,249,0.6);
+  transition: stroke 0.3s ease;
+}
+
+/* ═══════════════════════════════════════════════════════
+   FRANCHISE / WHY ASCENT
+   ═══════════════════════════════════════════════════════ */
+.franchise {
+  padding: var(--space-3xl) var(--gutter);
+  background: var(--ivory);
+}
+
+.franchise-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.franchise-top {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: var(--space-xl);
+  align-items: start;
+  margin-bottom: var(--space-xl);
+}
+
+.franchise h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--charcoal);
+}
+
+.franchise-intro {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--stone);
+  max-width: 52ch;
+  padding-top: 1rem;
+}
+
+.franchise-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: var(--space-lg);
+}
+
+.pillar {
+  padding: 2.5rem;
+  background: var(--white);
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pillar:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.06);
+}
+
+.pillar-number {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--copper);
+  margin-bottom: 1.5rem;
+}
+
+.pillar h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+
+.pillar p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--warm-gray);
+}
+
+/* ═══════════════════════════════════════════════════════
+   SCALE / PROOF — EDITORIAL NUMBER MOMENT
+   ═══════════════════════════════════════════════════════ */
+.scale {
+  padding: var(--space-3xl) var(--gutter);
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+}
+
+.scale::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 60%;
+  height: 140%;
+  background: radial-gradient(ellipse, rgba(194,133,90,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.scale-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.scale-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-xl);
+  border-bottom: 1px solid rgba(255,253,249,0.08);
+  padding-bottom: var(--space-md);
+}
+
+.scale-top h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 400;
+  color: var(--white);
+}
+
+.scale-top p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: rgba(255,253,249,0.4);
+  max-width: 36ch;
+  text-align: right;
+  line-height: 1.6;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.stat {
+  padding: var(--space-lg) 0;
+  border-right: 1px solid rgba(255,253,249,0.06);
+  padding-right: 2rem;
+}
+
+.stat:last-child {
+  border-right: none;
+}
+
+.stat:not(:first-child) {
+  padding-left: 2rem;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 400;
+  color: var(--copper-light);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(255,253,249,0.5);
+  line-height: 1.5;
+}
+
+.stat-detail {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,253,249,0.25);
+  margin-top: 0.75rem;
+}
+
+/* ═══════════════════════════════════════════════════════
+   PEOPLE / CULTURE — EDITORIAL SPLIT
+   ═══════════════════════════════════════════════════════ */
+.culture {
+  padding: var(--space-3xl) var(--gutter);
+  background: var(--white);
+}
+
+.culture-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.culture-image {
+  aspect-ratio: 4/5;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  /* Warm photographic placeholder */
+  background:
+    linear-gradient(170deg,
+      rgba(194,133,90,0.15) 0%,
+      rgba(45,74,62,0.12) 50%,
+      rgba(28,25,23,0.08) 100%
+    ),
+    var(--cream);
+}
+
+.culture-image-label {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  background: rgba(255,253,249,0.85);
+  backdrop-filter: blur(8px);
+  padding: 0.4rem 0.8rem;
+  border-radius: 3px;
+}
+
+.culture-text {
+  padding-left: var(--space-lg);
+}
+
+.culture-text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--charcoal);
+  margin-bottom: 2rem;
+}
+
+.culture-text h2 em {
+  font-style: italic;
+  color: var(--copper);
+}
+
+.culture-text p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--stone);
+  max-width: 40ch;
+}
+
+.culture-text p + p {
+  margin-top: 1.25rem;
+}
+
+.culture-values {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.value-item {
+  flex: 1;
+}
+
+.value-item h4 {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  margin-bottom: 0.5rem;
+}
+
+.value-item p {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--warm-gray);
+}
+
+/* ═══════════════════════════════════════════════════════
+   QUOTE / LEADERSHIP PULL
+   ═══════════════════════════════════════════════════════ */
+.quote-section {
+  padding: var(--space-3xl) var(--gutter);
+  background: var(--ivory);
+  text-align: center;
+}
+
+.quote-section-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.quote-mark {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: var(--copper);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.quote-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--charcoal);
+  margin-bottom: 2rem;
+}
+
+.quote-attribution {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--stone);
+}
+
+.quote-attribution strong {
+  font-weight: 500;
+  color: var(--charcoal);
+}
+
+/* ═══════════════════════════════════════════════════════
+   FINAL CTA
+   ═══════════════════════════════════════════════════════ */
+.final-cta {
+  padding: var(--space-3xl) var(--gutter);
+  background: var(--charcoal);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.final-cta::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(ellipse, rgba(194,133,90,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.final-cta-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.final-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.final-cta h2 em {
+  font-style: italic;
+  color: var(--copper-light);
+}
+
+.final-cta p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255,253,249,0.5);
+  margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--copper);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--copper-light);
+}
+
+.btn-outline {
+  background: transparent;
+  color: rgba(255,253,249,0.7);
+  border: 1px solid rgba(255,253,249,0.2);
+}
+
+.btn-outline:hover {
+  color: var(--white);
+  border-color: rgba(255,253,249,0.5);
+}
+
+/* ═══════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════ */
+.footer {
+  padding: var(--space-lg) var(--gutter);
+  background: var(--black);
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-logo {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,253,249,0.4);
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.footer-links a {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: rgba(255,253,249,0.3);
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: rgba(255,253,249,0.6);
+}
+
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: rgba(255,253,249,0.2);
+  letter-spacing: 0.05em;
+}
+
+/* ═══════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.2); }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .brand-statement-inner { grid-template-columns: 1fr; gap: var(--space-md); }
+  .franchise-top { grid-template-columns: 1fr; }
+  .franchise-pillars { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stat { border-right: none; padding: 2rem 0; }
+  .stat:not(:first-child) { padding-left: 0; }
+  .culture-inner { grid-template-columns: 1fr; }
+  .culture-text { padding-left: 0; padding-top: var(--space-md); }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .brand-cards { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .cta-buttons { flex-direction: column; align-items: center; }
+  .brands-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .brands-header p { text-align: left; }
+  .scale-top { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .scale-top p { text-align: left; }
+  .footer-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
+  .footer-left { flex-direction: column; }
+  .culture-values { flex-direction: column; gap: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 2L28 28H4L16 2Z" stroke="#c2855a" stroke-width="1.5" fill="none"/>
+      <path d="M16 10L22 24H10L16 10Z" stroke="rgba(255,253,249,0.3)" stroke-width="0.75" fill="none"/>
+    </svg>
+    <span class="nav-wordmark">Ascent</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#brands-section">Our Brands</a></li>
+    <li><a href="#franchise-section">Franchise</a></li>
+    <li><a href="#culture-section">Our People</a></li>
+    <li><a href="#">News</a></li>
+    <li><a href="#" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO
+     Section: The opening statement
+     Feel: Cinematic confidence. Warmth meets scale.
+     ═══════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Ascent Hospitality Management</p>
+    <h1>Rooted in community.<br>Rising <em>together.</em></h1>
+    <p class="hero-sub">We build and grow America's most beloved restaurant brands — powered by operational excellence, fueled by the warmth of real hospitality.</p>
+  </div>
+  <div class="hero-scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     BRAND STATEMENT
+     Section: Who Ascent Is
+     Feel: Clarity. Confidence. Purposeful.
+     ═══════════════════════════════════════════════════════ -->
+<section class="brand-statement">
+  <div class="brand-statement-inner reveal">
+    <div class="brand-statement-left">
+      <span class="eyebrow">Who We Are</span>
+      <span class="divider"></span>
+      <h2>A hospitality platform built to <em>grow brands</em> that matter</h2>
+    </div>
+    <div class="brand-statement-right">
+      <p>Ascent Hospitality Management is the parent company behind Huddle House and Perkins Restaurant & Bakery — two of America's most recognized family dining brands, with nearly a century of combined history.</p>
+      <p>We exist at the intersection of brand building and operational rigor. We give franchise partners the infrastructure, strategy, and support to grow — while keeping the soul of each brand intact.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     OUR BRANDS
+     Section: Brand Portfolio
+     Feel: Pride. Distinction. Two brands, one platform.
+     ═══════════════════════════════════════════════════════ -->
+<section class="brands" id="brands-section">
+  <div class="brands-header reveal">
+    <h2>Two brands.<br>One vision.</h2>
+    <p>Each with its own identity. Both built to serve communities across America.</p>
+  </div>
+  <div class="brand-cards">
+    <a href="https://www.perkinsrestaurants.com" class="brand-card brand-card--perkins reveal reveal-delay-1">
+      <div class="brand-card-bg"></div>
+      <div class="brand-card-content">
+        <span class="brand-card-label">Est. 1958 &mdash; Family Dining</span>
+        <div class="brand-card-bottom">
+          <div>
+            <h3>Perkins<br>Restaurant<br>&amp; Bakery</h3>
+            <p class="brand-card-tagline">Where every visit feels like coming home — with pie worth driving for.</p>
+          </div>
+          <div class="brand-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+              <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a href="https://www.huddlehouse.com" class="brand-card brand-card--huddle reveal reveal-delay-2">
+      <div class="brand-card-bg"></div>
+      <div class="brand-card-content">
+        <span class="brand-card-label">Est. 1964 &mdash; Any Meal, Any Time</span>
+        <div class="brand-card-bottom">
+          <div>
+            <h3>Huddle<br>House</h3>
+            <p class="brand-card-tagline">The neighborhood spot that never closes — breakfast all day, community always.</p>
+          </div>
+          <div class="brand-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+              <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FRANCHISE / WHY ASCENT
+     Section: The Growth Proposition
+     Feel: Credibility. Strategic clarity. Partnership.
+     ═══════════════════════════════════════════════════════ -->
+<section class="franchise" id="franchise-section">
+  <div class="franchise-inner">
+    <div class="franchise-top reveal">
+      <div>
+        <span class="eyebrow">Partnership</span>
+        <span class="divider"></span>
+        <h2>Grow with a platform that has your back</h2>
+      </div>
+      <p class="franchise-intro">When you partner with Ascent, you get more than a franchise agreement. You get a full-service hospitality engine — built to help you open, operate, and grow.</p>
+    </div>
+    <div class="franchise-pillars">
+      <div class="pillar reveal reveal-delay-1">
+        <span class="pillar-number">01</span>
+        <h3>Operational Infrastructure</h3>
+        <p>From supply chain to technology to training, we provide the systems and support that let you focus on what matters — your guests and your team.</p>
+      </div>
+      <div class="pillar reveal reveal-delay-2">
+        <span class="pillar-number">02</span>
+        <h3>Brand & Marketing Power</h3>
+        <p>National brand equity, local marketing support, and creative that actually drives traffic. You get the reach of a major brand with the flexibility to connect locally.</p>
+      </div>
+      <div class="pillar reveal reveal-delay-3">
+        <span class="pillar-number">03</span>
+        <h3>Growth Strategy</h3>
+        <p>Real estate intelligence, market analysis, and development support that help you identify the right locations and build a portfolio — not just a single unit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCALE / PROOF
+     Section: Numbers That Matter
+     Feel: Gravitas. Earned credibility. Quiet confidence.
+     ═══════════════════════════════════════════════════════ -->
+<section class="scale">
+  <div class="scale-inner">
+    <div class="scale-top reveal">
+      <h2>The scale to support you</h2>
+      <p>Numbers tell part of the story. The people behind them tell the rest.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat reveal reveal-delay-1">
+        <div class="stat-number">598</div>
+        <div class="stat-label">Locations across the U.S. and Canada</div>
+        <div class="stat-detail">And growing</div>
+      </div>
+      <div class="stat reveal reveal-delay-2">
+        <div class="stat-number">4,700+</div>
+        <div class="stat-label">Jobs created and counting</div>
+        <div class="stat-detail">In communities nationwide</div>
+      </div>
+      <div class="stat reveal reveal-delay-3">
+        <div class="stat-number">$26M</div>
+        <div class="stat-label">Raised for Give Kids The World</div>
+        <div class="stat-detail">Purpose beyond profit</div>
+      </div>
+      <div class="stat reveal reveal-delay-4">
+        <div class="stat-number">60+</div>
+        <div class="stat-label">Years of combined brand heritage</div>
+        <div class="stat-detail">Perkins (1958) · Huddle House (1964)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     PEOPLE / CULTURE
+     Section: The Human Side
+     Feel: Warmth. Authenticity. Real hospitality people.
+     ═══════════════════════════════════════════════════════ -->
+<section class="culture" id="culture-section">
+  <div class="culture-inner">
+    <div class="culture-image reveal">
+      <span class="culture-image-label">Photography: Team Culture</span>
+    </div>
+    <div class="culture-text reveal reveal-delay-2">
+      <span class="eyebrow">Our People</span>
+      <span class="divider"></span>
+      <h2>Hospitality starts with <em>who we are</em></h2>
+      <p>Behind every great restaurant is a team that cares — about the food, the guests, and each other. At Ascent, hospitality isn't a department. It's the foundation.</p>
+      <p>From our leadership team to our franchise partners to the people greeting you at the door, we hire for heart and build for the long term.</p>
+      <div class="culture-values">
+        <div class="value-item">
+          <h4>Serve First</h4>
+          <p>We lead by putting people ahead of everything else.</p>
+        </div>
+        <div class="value-item">
+          <h4>Own It</h4>
+          <p>Every challenge is ours. Every win is shared.</p>
+        </div>
+        <div class="value-item">
+          <h4>Stay Hungry</h4>
+          <p>We're never done growing, improving, or showing up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     LEADERSHIP QUOTE
+     Section: Voice from the Top
+     Feel: Humanity. Aspiration. Groundedness.
+     ═══════════════════════════════════════════════════════ -->
+<section class="quote-section">
+  <div class="quote-section-inner reveal">
+    <div class="quote-mark">&ldquo;</div>
+    <p class="quote-text">We don't just manage restaurants. We steward brands that have been part of American life for decades — and we take that responsibility seriously.</p>
+    <p class="quote-attribution"><strong>Ascent Leadership Team</strong><br>Ascent Hospitality Management</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FINAL CTA
+     Section: The Close
+     Feel: Invitation. Momentum. Confidence.
+     ═══════════════════════════════════════════════════════ -->
+<section class="final-cta">
+  <div class="final-cta-inner reveal">
+    <span class="eyebrow" style="color: var(--copper-light);">Join Us</span>
+    <h2 style="margin-top: 1.5rem;">Let's build<br>something <em>lasting</em></h2>
+    <p>Whether you're exploring franchise ownership, partnership opportunities, or a career in hospitality — there's a seat at the table.</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn btn-primary">Explore Franchising</a>
+      <a href="#" class="btn btn-outline">Contact Our Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <span class="footer-logo">Ascent Hospitality</span>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Brands</a></li>
+        <li><a href="#">Franchising</a></li>
+        <li><a href="#">Leadership</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Accessibility</a></li>
+      </ul>
+    </div>
+    <span class="footer-copy">&copy; 2026 Ascent Hospitality Management</span>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS
+     ═══════════════════════════════════════════════════════ -->
+<script>
+// Nav scroll behavior
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const id = link.getAttribute('href');
+    if (id !== '#') {
+      e.preventDefault();
+      document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
