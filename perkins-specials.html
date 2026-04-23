@@ -78,6 +78,11 @@
     width: 432px; height: 768px;
     position: relative;
     flex-shrink: 0;
+    overflow: hidden;
+  }
+  .card-frame > .card {
+    position: absolute; top: 0; left: 0;
+    transform-origin: top left;
   }
 
   /* THE CARD — 4.5" × 8" (432 × 768px) */
@@ -275,16 +280,6 @@
       padding: 20px 12px;
       overflow: visible;
     }
-    /* Scale the 432x768 card to fit the viewport width (with 24px total horizontal padding) */
-    .card-frame {
-      width: min(432px, calc(100vw - 24px));
-      height: calc(min(432px, calc(100vw - 24px)) * 768 / 432);
-      flex-shrink: 0;
-    }
-    .card {
-      transform-origin: top left;
-      transform: scale(calc(min(432px, calc(100vw - 24px)) / 432));
-    }
     /* Prevent iOS zoom-on-focus by keeping inputs >=16px */
     input, textarea, select { font-size: 16px !important; }
     label { font-size: 13px; }
@@ -478,18 +473,43 @@
   function esc(s) { return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
   async function downloadPNG() {
-    const canvas = await html2canvas(card, { scale: 3, backgroundColor: null, logging: false });
-    const link = document.createElement('a');
-    link.download = `perkins-specials-${new Date().toISOString().slice(0,10)}.png`;
-    link.href = canvas.toDataURL('image/png');
-    link.click();
+    // Capture at native 432x768 regardless of viewport scaling
+    const prevTransform = card.style.transform;
+    card.style.transform = 'none';
+    try {
+      const canvas = await html2canvas(card, { scale: 3, backgroundColor: null, logging: false, width: CARD_W, height: CARD_H });
+      const link = document.createElement('a');
+      link.download = `perkins-specials-${new Date().toISOString().slice(0,10)}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    } finally {
+      card.style.transform = prevTransform;
+    }
   }
 
   window.addEventListener('beforeprint', () => {
     printable.innerHTML = '';
-    printable.appendChild(card.cloneNode(true));
+    const clone = card.cloneNode(true);
+    clone.style.transform = 'none';
+    printable.appendChild(clone);
   });
   window.addEventListener('afterprint', () => { printable.innerHTML = ''; });
+
+  // ---------- RESPONSIVE CARD SCALING ----------
+  const CARD_W = 432, CARD_H = 768;
+  const cardFrame = document.getElementById('cardFrame');
+  const stage = document.querySelector('.stage');
+  function fitCard() {
+    const available = stage.clientWidth - 24;
+    const scale = Math.min(1, available / CARD_W);
+    card.style.transform = `scale(${scale})`;
+    cardFrame.style.width  = `${CARD_W * scale}px`;
+    cardFrame.style.height = `${CARD_H * scale}px`;
+  }
+  fitCard();
+  window.addEventListener('resize', fitCard);
+  // Refit when fonts finish loading (Lobster may shift metrics)
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitCard);
 </script>
 </body>
 </html>
